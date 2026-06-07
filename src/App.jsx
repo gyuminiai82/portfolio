@@ -51,9 +51,11 @@ function App() {
           rel="noopener noreferrer"
           className="group relative flex items-center justify-center w-12 h-12 bg-white hover:bg-slate-50 border border-slate-200 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-md transition-all duration-300 hover:-translate-y-0.5"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-slate-700 group-hover:text-blue-600 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-          </svg>
+          <div style={{ position: 'relative', width: '36px', height: '36px' }}>
+            <i className="ph-duotone ph-device-mobile" style={{ color: '#6c757d', fontSize: '1.3rem', position: 'absolute', top: '-2px', right: '2px' }}></i>
+            <i className="ph-duotone ph-globe" style={{ color: 'var(--primary)', fontSize: '1.5rem', position: 'absolute', bottom: '-2px', left: '-2px' }}></i>
+            <i className="ph-duotone ph-cursor" style={{ color: 'var(--text-color)', fontSize: '1rem', position: 'absolute', bottom: '-4px', left: '16px', transform: 'rotate(-15deg)', textShadow: '-1px -1px 0 var(--header-bg), 1px -1px 0 var(--header-bg), -1px 1px 0 var(--header-bg), 1px 1px 0 var(--header-bg)' }}></i>
+          </div>
           <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 text-[8px] font-black text-white border border-white shadow-sm scale-95 group-hover:scale-105 transition-transform duration-300">
             AI
           </span>

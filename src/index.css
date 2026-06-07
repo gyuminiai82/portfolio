@@ -1,6 +1,13 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+:root {
+  --primary: #3b82f6;
+  --text-color: #1e293b;
+  --header-bg: #ffffff;
+}
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
