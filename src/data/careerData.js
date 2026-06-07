@@ -80,7 +80,7 @@ export const careerData = [
     period: "2009.09 ~ 2013.03",
     duration: "3년 7개월",
     role: "SI사업부",
-    description: "-보건복지부 관련 사이트 유지보수 및 웹접근성 사업",
+    description: "-보건복지부 관련 사이트 유지보수 및 웹접근성 사업<br>(보건복지부 모바일, 국립서울병원, 국립마산병원, 국립공주병원, 국립춘천병원, 국립나주병원, 국립소록도병원, 국립재활원, 국립목포병원, 국립부곡병원, 국립망향의동산)",
     techStack: ["JSP", "Oracle 9i", "PHP", "MySQL", "AS3.0"],
     projects: [
       { name: "국립나주병원", image: "/images/dasominfo_naju.png", isWide: true },
@@ -101,7 +101,7 @@ export const careerData = [
     period: "2008.08 ~ 2009.09",
     duration: "1년 2개월",
     role: "기술개발그룹",
-    description: "-사이트 개발 및 유지보수, 이벤트 페이지 제작",
+    description: "-사이트 개발 및 유지보수, 이벤트 페이지 제작<br>-동부자산운용(채용, 온라인상담)-Tomcat, Oracle, jsp<br>-경기도청 외국어 사이트 유지보수<br>-한국제지 리뉴얼<br>-주택공사 보금자리주택 안내홈페이지<br>(가우스, beaver framework, sybase)",
     techStack: ["JSP", "Tomcat", "Oracle", "PHP"],
     projects: [
       { name: "한국제지", image: "/images/lh_hankuk.png", isWide: true },
@@ -114,7 +114,7 @@ export const careerData = [
     period: "2005.08 ~ 2006.02",
     duration: "7개월",
     role: "개발팀",
-    description: "-사이트 개발 및 유지보수",
+    description: "-사이트 개발 및 유지보수<br>-프로차일드(게시판, 쇼핑몰)-ASP, MS-SQL<br>-로이츠(게시판, 회원관리)-PHP, MySQL<br>-대명한차(게시판, 쇼핑몰)-PHP, MySQL<br>-마스터라이프(장사시설검색, 회원관리)-PHP, MySQL",
     techStack: ["ASP", "MS-SQL", "PHP", "MySQL"],
     projects: [
       { name: "로이츠", image: "/images/qiv_loits.png", isWide: true },
