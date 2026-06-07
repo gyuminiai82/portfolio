@@ -1,59 +1,151 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+
+function ProjectGallery({ projects }) {
+  const galleryRef = useRef(null);
+  const exactScrollRef = useRef(0);
+  const isDraggingGallery = useRef(false);
+  const isHovered = useRef(false);
+  
+  // Refs to store drag state without causing re-renders
+  const startXRef = useRef(0);
+  const scrollLeftRef = useRef(0);
+
+  const handleGalleryMouseDown = (e) => {
+    isDraggingGallery.current = true;
+    startXRef.current = e.pageX - e.currentTarget.offsetLeft;
+    scrollLeftRef.current = e.currentTarget.scrollLeft;
+    exactScrollRef.current = e.currentTarget.scrollLeft;
+  };
+
+  const handleGalleryMouseLeave = () => {
+    isDraggingGallery.current = false;
+    isHovered.current = false;
+  };
+
+  const handleGalleryMouseUp = () => {
+    isDraggingGallery.current = false;
+  };
+
+  const handleGalleryMouseMove = (e) => {
+    if (!isDraggingGallery.current) return;
+    e.preventDefault();
+    const x = e.pageX - e.currentTarget.offsetLeft;
+    const walk = (x - startXRef.current) * 2;
+    const newScroll = scrollLeftRef.current - walk;
+    e.currentTarget.scrollLeft = newScroll;
+    exactScrollRef.current = newScroll; // Sync the exact scroll
+  };
+
+  const handleGalleryTouchStart = (e) => {
+    isDraggingGallery.current = true; // Pause auto-roll
+    scrollLeftRef.current = e.currentTarget.scrollLeft;
+    exactScrollRef.current = e.currentTarget.scrollLeft;
+  };
+
+  const handleGalleryTouchEnd = () => {
+    isDraggingGallery.current = false; // Resume auto-roll
+  };
+
+  // Indestructible Auto-rolling gallery
+  useEffect(() => {
+    if (!projects || projects.length <= 1) return;
+
+    let animationFrameId;
+
+    const scroll = () => {
+      if (galleryRef.current && !isDraggingGallery.current && !isHovered.current) {
+        const { scrollWidth } = galleryRef.current;
+        // The container has exactly 2 sets of identical items.
+        // So the exact width of one set is scrollWidth / 2.
+        const halfWidth = scrollWidth / 2;
+        
+        if (halfWidth > 0) {
+          // Increase internal float by a safe amount (1.5px per frame)
+          exactScrollRef.current += 1.5; 
+          
+          // When we have scrolled exactly the width of the first set,
+          // the second set is perfectly in position. Snap back to 0 seamlessly.
+          if (exactScrollRef.current >= halfWidth) {
+            // Keep the remainder to avoid micro-stutters
+            exactScrollRef.current = exactScrollRef.current - halfWidth;
+            galleryRef.current.scrollLeft = exactScrollRef.current;
+          } else {
+            galleryRef.current.scrollLeft = exactScrollRef.current;
+          }
+        }
+      }
+      animationFrameId = requestAnimationFrame(scroll);
+    };
+
+    animationFrameId = requestAnimationFrame(scroll);
+
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [projects]);
+
+  if (!projects || projects.length === 0) return null;
+
+  return (
+    <div className="w-full">
+      <h5 className="text-[13px] font-bold text-slate-400 mb-4 uppercase tracking-widest flex items-center justify-between px-2">
+        <span>주요 프로젝트 화면</span>
+        {projects.length > 1 && (
+          <span className="text-[10px] text-blue-400 font-normal normal-case">좌우로 드래그 해보세요</span>
+        )}
+      </h5>
+      
+      <div className="relative w-full -mx-2 px-2">
+        {/* Fading Edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white/0 to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white/0 to-transparent z-10 pointer-events-none"></div>
+
+        {/* Outer hidden container */}
+        <div className="flex w-full overflow-hidden py-4 px-2">
+          {/* Inner animating container - duplicates items for infinite loop */}
+          <div 
+            ref={galleryRef}
+            onMouseDown={handleGalleryMouseDown}
+            onMouseLeave={handleGalleryMouseLeave}
+            onMouseUp={handleGalleryMouseUp}
+            onMouseMove={handleGalleryMouseMove}
+            onTouchStart={handleGalleryTouchStart}
+            onTouchEnd={handleGalleryTouchEnd}
+            onTouchCancel={handleGalleryTouchEnd}
+            onMouseEnter={() => isHovered.current = true}
+            className="flex w-full overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing space-x-4 px-2"
+          >
+            {[...(projects.length > 1 ? [...projects, ...projects] : projects)].map((proj, idx) => (
+              <div key={idx} className={`relative group/img flex-shrink-0 ${proj.isWide ? 'w-64 md:w-96' : 'w-36 md:w-44'} h-48 md:h-56 rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:border-slate-300 transition-colors duration-300 bg-white flex items-center justify-center p-1 hover:shadow-md select-none`}>
+                <img 
+                  src={proj.image} 
+                  alt={proj.name} 
+                  className="w-full h-full object-contain opacity-70 group-hover/img:opacity-100 transition-all duration-500 rounded-md pointer-events-none"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextElementSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="hidden absolute inset-0 flex items-center justify-center text-slate-400 text-xs text-center p-4">
+                  이미지 필요<br/>({proj.image.split('/').pop()})
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex items-end p-4 pointer-events-none">
+                  <span className="text-sm font-bold text-white drop-shadow-md transform translate-y-2 group-hover/img:translate-y-0 transition-transform duration-300">
+                    {proj.name}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function TimelineItem({ item, index }) {
   const isEven = index % 2 === 0;
   const cardRef = useRef(null);
-  const galleryRef = useRef(null);
-
-  // Gallery Drag State
-  const [isDraggingGallery, setIsDraggingGallery] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleGalleryMouseDown = (e) => {
-    setIsDraggingGallery(true);
-    setStartX(e.pageX - e.currentTarget.offsetLeft);
-    setScrollLeft(e.currentTarget.scrollLeft);
-  };
-  const handleGalleryMouseLeave = () => {
-    setIsDraggingGallery(false);
-    setIsHovered(false);
-  };
-  const handleGalleryMouseUp = () => setIsDraggingGallery(false);
-  const handleGalleryMouseMove = (e) => {
-    if (!isDraggingGallery) return;
-    e.preventDefault();
-    const x = e.pageX - e.currentTarget.offsetLeft;
-    const walk = (x - startX) * 2;
-    e.currentTarget.scrollLeft = scrollLeft - walk;
-  };
-
-  // Continuous Auto-rolling gallery
-  useEffect(() => {
-    if (!item.projects || item.projects.length <= 1) return;
-    if (isDraggingGallery || isHovered) return;
-
-    const interval = setInterval(() => {
-      if (galleryRef.current) {
-        const { scrollLeft, scrollWidth, clientWidth } = galleryRef.current;
-        const maxScroll = scrollWidth - clientWidth;
-        
-        if (maxScroll <= 0) return; // No need to scroll if it fits
-
-        // If reached the end, snap back to start
-        if (scrollLeft >= maxScroll - 1) {
-          galleryRef.current.scrollLeft = 0;
-        } else {
-          galleryRef.current.scrollBy({ left: 1 }); // scrollBy is often more reliable than scrollLeft += 1 across different browser scaling settings
-        }
-      }
-    }, 20); // 50 fps
-
-    return () => clearInterval(interval);
-  }, [item.projects, isDraggingGallery, isHovered]);
-
+  
   // 3D Tilt & Spotlight State
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -111,55 +203,6 @@ export default function TimelineItem({ item, index }) {
     visible: { scale: 1, opacity: 1, x: "-50%", transition: { type: "spring", stiffness: 300, damping: 20, delay: 0.4 } }
   };
 
-  const projectGallery = item.projects && item.projects.length > 0 ? (
-    <div className="w-full">
-      <h5 className="text-[13px] font-bold text-slate-400 mb-4 uppercase tracking-widest flex items-center justify-between px-2">
-        <span>주요 프로젝트 화면</span>
-        {item.projects.length > 1 && (
-          <span className="text-[10px] text-blue-400 font-normal normal-case">좌우로 드래그 해보세요</span>
-        )}
-      </h5>
-      
-      <div className="relative w-full -mx-2 px-2">
-        {/* Fading Edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white/0 to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white/0 to-transparent z-10 pointer-events-none"></div>
-
-        <div 
-          ref={galleryRef}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseDown={handleGalleryMouseDown}
-          onMouseLeave={handleGalleryMouseLeave}
-          onMouseUp={handleGalleryMouseUp}
-          onMouseMove={handleGalleryMouseMove}
-          className="flex w-full overflow-x-auto scrollbar-hide py-4 cursor-grab active:cursor-grabbing space-x-4 px-2"
-        >
-          {item.projects.map((proj, idx) => (
-            <div key={idx} className={`relative group/img flex-shrink-0 ${proj.isWide ? 'w-64 md:w-96' : 'w-36 md:w-44'} h-48 md:h-56 rounded-2xl overflow-hidden border border-slate-100 shadow-sm cursor-pointer hover:border-slate-300 transition-colors duration-300 bg-white flex items-center justify-center p-1 hover:shadow-md select-none`}>
-              <img 
-                src={proj.image} 
-                alt={proj.name} 
-                className="w-full h-full object-contain opacity-70 group-hover/img:opacity-100 transition-all duration-500 rounded-md pointer-events-none"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextElementSibling.style.display = 'flex';
-                }}
-              />
-              <div className="hidden absolute inset-0 flex items-center justify-center text-slate-400 text-xs text-center p-4">
-                이미지 필요<br/>({proj.image.split('/').pop()})
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex items-end p-4 pointer-events-none">
-                <span className="text-sm font-bold text-white drop-shadow-md transform translate-y-2 group-hover/img:translate-y-0 transition-transform duration-300">
-                  {proj.name}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  ) : null;
-
   return (
     <motion.div
       initial="hidden"
@@ -175,9 +218,9 @@ export default function TimelineItem({ item, index }) {
 
       {/* Opposite Side Content (Project Gallery on Desktop) */}
       <motion.div variants={galleryEntrance} className="hidden md:flex md:w-[45%] relative items-start justify-center">
-        {projectGallery && (
+        {item.projects && item.projects.length > 0 && (
           <div className="w-full bg-white/30 backdrop-blur-xl rounded-[2rem] p-6 border border-white/40 shadow-[0_8px_32px_rgba(31,38,135,0.05)]">
-            {projectGallery}
+            <ProjectGallery projects={item.projects} />
           </div>
         )}
       </motion.div>
@@ -206,7 +249,7 @@ export default function TimelineItem({ item, index }) {
           {/* Glowing Top Accent Line */}
           <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-          {/* Card Content (translateZ pushes it out in 3D space) */}
+          {/* Card Content */}
           <div style={{ transform: "translateZ(30px)" }} className="relative z-10">
             <div className="flex flex-col xl:flex-row xl:items-start justify-between mb-5 gap-3">
               <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tighter">
@@ -253,9 +296,9 @@ export default function TimelineItem({ item, index }) {
             </div>
 
             {/* Project Gallery Area (Mobile Only) */}
-            {projectGallery && (
+            {item.projects && item.projects.length > 0 && (
               <div className="md:hidden mt-8 pt-6 border-t border-slate-100/50">
-                {projectGallery}
+                <ProjectGallery projects={item.projects} />
               </div>
             )}
           </div>
