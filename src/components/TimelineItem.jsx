@@ -176,7 +176,7 @@ export default function TimelineItem({ item, index }) {
       {/* Opposite Side Content (Project Gallery on Desktop) */}
       <motion.div variants={galleryEntrance} className="hidden md:flex md:w-[45%] relative items-start justify-center">
         {projectGallery && (
-          <div className="w-full bg-white/40 backdrop-blur-md rounded-[2rem] p-6 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.02)]">
+          <div className="w-full bg-white/30 backdrop-blur-xl rounded-[2rem] p-6 border border-white/40 shadow-[0_8px_32px_rgba(31,38,135,0.05)]">
             {projectGallery}
           </div>
         )}
@@ -191,7 +191,7 @@ export default function TimelineItem({ item, index }) {
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-          className="relative rounded-[2rem] bg-white/70 backdrop-blur-2xl border border-slate-100 p-6 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:bg-white/90"
+          className="relative rounded-[2rem] bg-white/40 backdrop-blur-xl border border-white/40 p-6 md:p-10 shadow-[0_8px_32px_rgba(31,38,135,0.05)] overflow-hidden transition-all duration-300 hover:shadow-[0_8px_32px_rgba(31,38,135,0.08)] hover:bg-white/55 hover:border-white/60"
         >
           {/* Spotlight Gradient */}
           <motion.div
