@@ -74,9 +74,7 @@ function App() {
           rel="noopener noreferrer"
           className="group relative flex items-center justify-center w-12 h-12 bg-white hover:bg-slate-50 border border-slate-200 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-md transition-all duration-300 hover:-translate-y-0.5"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-orange-500 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 7.1 10c-2.05 1.41-3.4 3.96-3.4 6.6a8 8 0 0013.957 2.057z" />
-          </svg>
+          <img src="https://cook.minstudio.app/images/logo.png" alt="쿡스튜디오" className="h-5 w-5 object-contain group-hover:scale-110 transition-transform" />
           <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 text-[8px] font-black text-white border border-white shadow-sm scale-95 group-hover:scale-105 transition-transform duration-300">
             AI
           </span>
@@ -109,26 +107,7 @@ function App() {
           </div>
         </a>
 
-        {/* 랜딩페이지 */}
-        <a 
-          href="https://gyuminiai82.github.io/landing1/" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="group relative flex items-center justify-center w-12 h-12 bg-white hover:bg-slate-50 border border-slate-200 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-md transition-all duration-300 hover:-translate-y-0.5"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-teal-500 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
-          <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 text-[8px] font-black text-white border border-white shadow-sm scale-95 group-hover:scale-105 transition-transform duration-300">
-            AI
-          </span>
-          <div className="absolute right-full mr-[72px] top-1/2 -translate-y-1/2 opacity-0 translate-x-2 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 z-50">
-            <div className="whitespace-nowrap px-3 py-1.5 text-xs font-bold text-slate-800 bg-white/95 backdrop-blur-sm border border-slate-200/50 rounded-xl shadow-lg flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-teal-500"></span>
-              랜딩페이지
-            </div>
-          </div>
-        </a>
+
       </div>
 
       <main className="relative z-10 pt-12 md:pt-16 lg:pt-20">

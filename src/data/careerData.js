@@ -22,7 +22,7 @@ export const careerData = [
     period: "2016.07 ~ 2019.02",
     duration: "2년 8개월",
     role: "기술연구소",
-    description: "-온닥 관리자 개발(slim, bootstrap)<br>-온닥(java, Objective-C)<br>-온닥플러스(java, Objective-C, FCM)",
+    description: "-온닥 관리자 개발(slim, bootstrap)<br>-온닥(하이브리드 앱(java, Objective-C))<br>-온닥플러스(하이브리드 앱(java, Objective-C, FCM))",
     techStack: ["Android", "Swift", "FCM", "PHP(Slim)", "MySQL", "Bootstrap"],
     projects: [
       { name: "온닥 관리자", image: "/images/dasominfo_admin.png", isWide: true },
