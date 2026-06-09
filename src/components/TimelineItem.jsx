@@ -61,8 +61,8 @@ function ProjectGallery({ projects }) {
         const halfWidth = scrollWidth / 2;
         
         if (halfWidth > 0) {
-          // Increase internal float by a safe amount (1.5px per frame)
-          exactScrollRef.current += 1.5; 
+          // Increase internal float by a safe amount (0.5px per frame)
+          exactScrollRef.current += 0.5; 
           
           // When we have scrolled exactly the width of the first set,
           // the second set is perfectly in position. Snap back to 0 seamlessly.
