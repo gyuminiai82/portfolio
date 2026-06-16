@@ -104,7 +104,7 @@ function App() {
               <ul className="space-y-2 text-slate-600 font-medium leading-tight">
                 <li className="flex gap-2 break-keep">
                   <span className="text-blue-500 font-bold w-10 shrink-0">Web</span>
-                  <span>Next.js 14 (BFF 구조)</span>
+                  <span>Next.js 14 (App Router, BFF)</span>
                 </li>
                 <li className="flex gap-2 break-keep">
                   <span className="text-blue-500 font-bold w-10 shrink-0">Deploy</span>
@@ -141,7 +141,7 @@ function App() {
               <ul className="space-y-2 text-slate-600 font-medium leading-tight">
                 <li className="flex gap-2 break-keep">
                   <span className="text-orange-500 font-bold w-10 shrink-0">Web</span>
-                  <span>Next.js 14 (BFF 구조)</span>
+                  <span>Next.js 14 (App Router, BFF)</span>
                 </li>
                 <li className="flex gap-2 break-keep">
                   <span className="text-orange-500 font-bold w-10 shrink-0">Deploy</span>
