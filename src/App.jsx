@@ -74,10 +74,7 @@ function App() {
                   <span className="text-emerald-500 font-bold w-10 shrink-0">DB</span>
                   <span>PostgreSQL</span>
                 </li>
-                <li className="flex gap-2 break-keep">
-                  <span className="text-emerald-500 font-bold w-10 shrink-0">Design</span>
-                  <span>Tailwind CSS</span>
-                </li>
+
               </ul>
             </div>
           </div>
