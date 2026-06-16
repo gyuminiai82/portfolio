@@ -78,7 +78,7 @@ function App() {
                 </li>
                 <li className="flex gap-2 break-keep">
                   <span className="text-blue-500 font-bold w-10 shrink-0">Media</span>
-                  <span>Vercel Image Optimization</span>
+                  <span>Oracle OCI Storage</span>
                 </li>
               </ul>
             </div>
@@ -115,7 +115,7 @@ function App() {
                 </li>
                 <li className="flex gap-2 break-keep">
                   <span className="text-orange-500 font-bold w-10 shrink-0">Media</span>
-                  <span>Vercel Image Optimization</span>
+                  <span>Oracle OCI Storage</span>
                 </li>
               </ul>
             </div>
