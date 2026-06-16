@@ -55,7 +55,7 @@ function App() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
           </svg>
 
-          <div className="absolute right-full mr-4 top-1/2 -translate-y-1/2 opacity-0 translate-x-4 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-400 z-50">
+          <div className="absolute right-full mr-4 top-0 opacity-0 translate-x-4 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-400 z-50">
             <div className="w-[220px] p-4 text-xs bg-white/95 backdrop-blur-md border border-slate-200/60 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] flex flex-col gap-3">
               <div className="font-extrabold text-slate-800 text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
@@ -95,7 +95,7 @@ function App() {
             <i className="ph-duotone ph-cursor" style={{ color: 'var(--text-color)', fontSize: '1rem', position: 'absolute', bottom: '-4px', left: '16px', transform: 'rotate(-15deg)', textShadow: '-1px -1px 0 var(--header-bg), 1px -1px 0 var(--header-bg), -1px 1px 0 var(--header-bg), 1px 1px 0 var(--header-bg)' }}></i>
           </div>
 
-          <div className="absolute right-full mr-4 top-1/2 -translate-y-1/2 opacity-0 translate-x-4 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-400 z-50">
+          <div className="absolute right-full mr-4 top-0 opacity-0 translate-x-4 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-400 z-50">
             <div className="w-[220px] p-4 text-xs bg-white/95 backdrop-blur-md border border-slate-200/60 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] flex flex-col gap-3">
               <div className="font-extrabold text-slate-800 text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
                 <span className="w-2 h-2 rounded-full bg-blue-500"></span>
@@ -132,7 +132,7 @@ function App() {
         >
           <img src="https://cook.minstudio.app/images/logo.png" alt="쿡스튜디오" className="h-5 w-5 object-contain group-hover:scale-110 transition-transform" />
 
-          <div className="absolute right-full mr-4 top-1/2 -translate-y-1/2 opacity-0 translate-x-4 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-400 z-50">
+          <div className="absolute right-full mr-4 top-0 opacity-0 translate-x-4 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-400 z-50">
             <div className="w-[220px] p-4 text-xs bg-white/95 backdrop-blur-md border border-slate-200/60 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] flex flex-col gap-3">
               <div className="font-extrabold text-slate-800 text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
                 <span className="w-2 h-2 rounded-full bg-orange-500"></span>
