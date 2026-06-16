@@ -136,7 +136,7 @@ function App() {
             <div className="w-[220px] p-4 text-xs bg-white/95 backdrop-blur-md border border-slate-200/60 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] flex flex-col gap-3">
               <div className="font-extrabold text-slate-800 text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
                 <span className="w-2 h-2 rounded-full bg-orange-500"></span>
-                쿡스튜디오
+                쿡레시
               </div>
               <ul className="space-y-2 text-slate-600 font-medium leading-tight">
                 <li className="flex gap-2 break-keep">
