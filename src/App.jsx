@@ -64,15 +64,24 @@ function App() {
               <ul className="space-y-2 text-slate-600 font-medium leading-tight">
                 <li className="flex gap-2 break-keep">
                   <span className="text-emerald-500 font-bold w-12 shrink-0">Front</span>
-                  <span>Next.js 14 (App Router)</span>
+                  <span className="flex flex-col">
+                    <span>Next.js 14</span>
+                    <span className="text-[10px] text-slate-400 -mt-0.5">(App Router)</span>
+                  </span>
                 </li>
                 <li className="flex gap-2 break-keep">
                   <span className="text-emerald-500 font-bold w-12 shrink-0">Back</span>
-                  <span>Python (FastAPI)</span>
+                  <span className="flex flex-col">
+                    <span>Python</span>
+                    <span className="text-[10px] text-slate-400 -mt-0.5">(FastAPI)</span>
+                  </span>
                 </li>
                 <li className="flex gap-2 break-keep">
                   <span className="text-emerald-500 font-bold w-12 shrink-0">Deploy</span>
-                  <span>AWS EC2 (Docker, GitHub Actions)</span>
+                  <span className="flex flex-col">
+                    <span>AWS EC2</span>
+                    <span className="text-[10px] text-slate-400 -mt-0.5">(Docker, GitHub Actions)</span>
+                  </span>
                 </li>
                 <li className="flex gap-2 break-keep">
                   <span className="text-emerald-500 font-bold w-12 shrink-0">DB</span>
@@ -104,11 +113,17 @@ function App() {
               <ul className="space-y-2 text-slate-600 font-medium leading-tight">
                 <li className="flex gap-2 break-keep">
                   <span className="text-blue-500 font-bold w-10 shrink-0">Web</span>
-                  <span>Next.js 14 (App Router, BFF)</span>
+                  <span className="flex flex-col">
+                    <span>Next.js 14</span>
+                    <span className="text-[10px] text-slate-400 -mt-0.5">(App Router, BFF)</span>
+                  </span>
                 </li>
                 <li className="flex gap-2 break-keep">
                   <span className="text-blue-500 font-bold w-10 shrink-0">Deploy</span>
-                  <span>Vercel (GitHub 연동)</span>
+                  <span className="flex flex-col">
+                    <span>Vercel</span>
+                    <span className="text-[10px] text-slate-400 -mt-0.5">(GitHub 연동)</span>
+                  </span>
                 </li>
                 <li className="flex gap-2 break-keep">
                   <span className="text-blue-500 font-bold w-10 shrink-0">DB</span>
@@ -141,11 +156,17 @@ function App() {
               <ul className="space-y-2 text-slate-600 font-medium leading-tight">
                 <li className="flex gap-2 break-keep">
                   <span className="text-orange-500 font-bold w-10 shrink-0">Web</span>
-                  <span>Next.js 14 (App Router, BFF)</span>
+                  <span className="flex flex-col">
+                    <span>Next.js 14</span>
+                    <span className="text-[10px] text-slate-400 -mt-0.5">(App Router, BFF)</span>
+                  </span>
                 </li>
                 <li className="flex gap-2 break-keep">
                   <span className="text-orange-500 font-bold w-10 shrink-0">Deploy</span>
-                  <span>Vercel (GitHub 연동)</span>
+                  <span className="flex flex-col">
+                    <span>Vercel</span>
+                    <span className="text-[10px] text-slate-400 -mt-0.5">(GitHub 연동)</span>
+                  </span>
                 </li>
                 <li className="flex gap-2 break-keep">
                   <span className="text-orange-500 font-bold w-10 shrink-0">DB</span>
