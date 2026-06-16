@@ -72,7 +72,7 @@ function App() {
                 </li>
                 <li className="flex gap-2 break-keep">
                   <span className="text-emerald-500 font-bold w-12 shrink-0">Deploy</span>
-                  <span>AWS EC2 (Docker)</span>
+                  <span>AWS EC2 (Docker, GitHub Actions)</span>
                 </li>
                 <li className="flex gap-2 break-keep">
                   <span className="text-emerald-500 font-bold w-12 shrink-0">DB</span>
