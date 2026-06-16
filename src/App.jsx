@@ -63,18 +63,21 @@ function App() {
               </div>
               <ul className="space-y-2 text-slate-600 font-medium leading-tight">
                 <li className="flex gap-2 break-keep">
-                  <span className="text-emerald-500 font-bold w-10 shrink-0">Web</span>
+                  <span className="text-emerald-500 font-bold w-12 shrink-0">Front</span>
                   <span>Next.js 14 (App Router)</span>
                 </li>
                 <li className="flex gap-2 break-keep">
-                  <span className="text-emerald-500 font-bold w-10 shrink-0">Deploy</span>
+                  <span className="text-emerald-500 font-bold w-12 shrink-0">Back</span>
+                  <span>Python (FastAPI)</span>
+                </li>
+                <li className="flex gap-2 break-keep">
+                  <span className="text-emerald-500 font-bold w-12 shrink-0">Deploy</span>
                   <span>AWS EC2 (Docker)</span>
                 </li>
                 <li className="flex gap-2 break-keep">
-                  <span className="text-emerald-500 font-bold w-10 shrink-0">DB</span>
+                  <span className="text-emerald-500 font-bold w-12 shrink-0">DB</span>
                   <span>PostgreSQL</span>
                 </li>
-
               </ul>
             </div>
           </div>
