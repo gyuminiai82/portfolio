@@ -68,11 +68,11 @@ function App() {
                 </li>
                 <li className="flex gap-2 break-keep">
                   <span className="text-emerald-500 font-bold w-10 shrink-0">Deploy</span>
-                  <span>Vercel (GitHub 연동)</span>
+                  <span>AWS EC2 (Docker)</span>
                 </li>
                 <li className="flex gap-2 break-keep">
                   <span className="text-emerald-500 font-bold w-10 shrink-0">DB</span>
-                  <span>Oracle Cloud Database</span>
+                  <span>PostgreSQL</span>
                 </li>
                 <li className="flex gap-2 break-keep">
                   <span className="text-emerald-500 font-bold w-10 shrink-0">Design</span>
