@@ -74,7 +74,7 @@ function App() {
                 </li>
                 <li className="flex gap-2 break-keep">
                   <span className="text-blue-500 font-bold w-10 shrink-0">DB</span>
-                  <span>Oracle Cloud (1-way TLS)</span>
+                  <span>Oracle Cloud Database</span>
                 </li>
                 <li className="flex gap-2 break-keep">
                   <span className="text-blue-500 font-bold w-10 shrink-0">Media</span>
@@ -111,7 +111,7 @@ function App() {
                 </li>
                 <li className="flex gap-2 break-keep">
                   <span className="text-orange-500 font-bold w-10 shrink-0">DB</span>
-                  <span>Oracle Cloud (1-way TLS)</span>
+                  <span>Oracle Cloud Database</span>
                 </li>
                 <li className="flex gap-2 break-keep">
                   <span className="text-orange-500 font-bold w-10 shrink-0">Media</span>
