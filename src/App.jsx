@@ -122,44 +122,7 @@ function App() {
           </div>
         </a>
 
-        {/* 페스티벌 */}
-        <a 
-          href="https://festival.minstudio.app" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="group relative flex items-center justify-center w-12 h-12 bg-white hover:bg-slate-50 border border-slate-200 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-md transition-all duration-300 hover:-translate-y-0.5"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-pink-500 group-hover:rotate-12 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-          </svg>
 
-          <div className="absolute right-full mr-4 top-1/2 -translate-y-1/2 opacity-0 translate-x-4 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-400 z-50">
-            <div className="w-[220px] p-4 text-xs bg-white/95 backdrop-blur-md border border-slate-200/60 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] flex flex-col gap-3">
-              <div className="font-extrabold text-slate-800 text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
-                <span className="w-2 h-2 rounded-full bg-pink-500"></span>
-                페스티벌
-              </div>
-              <ul className="space-y-2 text-slate-600 font-medium leading-tight">
-                <li className="flex gap-2 break-keep">
-                  <span className="text-pink-500 font-bold w-10 shrink-0">Web</span>
-                  <span>Next.js 14 (App Router)</span>
-                </li>
-                <li className="flex gap-2 break-keep">
-                  <span className="text-pink-500 font-bold w-10 shrink-0">Infra</span>
-                  <span>Vercel Edge Network</span>
-                </li>
-                <li className="flex gap-2 break-keep">
-                  <span className="text-pink-500 font-bold w-10 shrink-0">DB</span>
-                  <span>Oracle Cloud (1-way TLS)</span>
-                </li>
-                <li className="flex gap-2 break-keep">
-                  <span className="text-pink-500 font-bold w-10 shrink-0">Media</span>
-                  <span>Vercel Image Optimization</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </a>
 
 
       </div>
