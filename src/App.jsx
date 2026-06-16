@@ -69,8 +69,8 @@ function App() {
                   <span>Next.js 14 (App Router)</span>
                 </li>
                 <li className="flex gap-2 break-keep">
-                  <span className="text-blue-500 font-bold w-10 shrink-0">Infra</span>
-                  <span>Vercel Edge Network</span>
+                  <span className="text-blue-500 font-bold w-10 shrink-0">Deploy</span>
+                  <span>Vercel (GitHub 연동)</span>
                 </li>
                 <li className="flex gap-2 break-keep">
                   <span className="text-blue-500 font-bold w-10 shrink-0">DB</span>
@@ -106,8 +106,8 @@ function App() {
                   <span>Next.js 14 (App Router)</span>
                 </li>
                 <li className="flex gap-2 break-keep">
-                  <span className="text-orange-500 font-bold w-10 shrink-0">Infra</span>
-                  <span>Vercel Edge Network</span>
+                  <span className="text-orange-500 font-bold w-10 shrink-0">Deploy</span>
+                  <span>Vercel (GitHub 연동)</span>
                 </li>
                 <li className="flex gap-2 break-keep">
                   <span className="text-orange-500 font-bold w-10 shrink-0">DB</span>
