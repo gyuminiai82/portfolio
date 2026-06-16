@@ -56,9 +56,7 @@ function App() {
             <i className="ph-duotone ph-globe" style={{ color: 'var(--primary)', fontSize: '1.5rem', position: 'absolute', bottom: '-2px', left: '-2px' }}></i>
             <i className="ph-duotone ph-cursor" style={{ color: 'var(--text-color)', fontSize: '1rem', position: 'absolute', bottom: '-4px', left: '16px', transform: 'rotate(-15deg)', textShadow: '-1px -1px 0 var(--header-bg), 1px -1px 0 var(--header-bg), -1px 1px 0 var(--header-bg), 1px 1px 0 var(--header-bg)' }}></i>
           </div>
-          <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 text-[8px] font-black text-white border border-white shadow-sm scale-95 group-hover:scale-105 transition-transform duration-300">
-            AI
-          </span>
+
           <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 opacity-0 translate-x-2 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 z-50">
             <div className="whitespace-nowrap px-3 py-1.5 text-xs font-bold text-slate-800 bg-white/95 backdrop-blur-sm border border-slate-200/50 rounded-xl shadow-lg flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-blue-500"></span>
@@ -75,9 +73,7 @@ function App() {
           className="group relative flex items-center justify-center w-12 h-12 bg-white hover:bg-slate-50 border border-slate-200 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-md transition-all duration-300 hover:-translate-y-0.5"
         >
           <img src="https://cook.minstudio.app/images/logo.png" alt="쿡스튜디오" className="h-5 w-5 object-contain group-hover:scale-110 transition-transform" />
-          <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 text-[8px] font-black text-white border border-white shadow-sm scale-95 group-hover:scale-105 transition-transform duration-300">
-            AI
-          </span>
+
           <div className="absolute right-full mr-[72px] top-1/2 -translate-y-1/2 opacity-0 translate-x-2 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 z-50">
             <div className="whitespace-nowrap px-3 py-1.5 text-xs font-bold text-slate-800 bg-white/95 backdrop-blur-sm border border-slate-200/50 rounded-xl shadow-lg flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-orange-500"></span>
@@ -96,9 +92,7 @@ function App() {
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-pink-500 group-hover:rotate-12 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
           </svg>
-          <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 text-[8px] font-black text-white border border-white shadow-sm scale-95 group-hover:scale-105 transition-transform duration-300">
-            AI
-          </span>
+
           <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 opacity-0 translate-x-2 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 z-50">
             <div className="whitespace-nowrap px-3 py-1.5 text-xs font-bold text-slate-800 bg-white/95 backdrop-blur-sm border border-slate-200/50 rounded-xl shadow-lg flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-pink-500"></span>
