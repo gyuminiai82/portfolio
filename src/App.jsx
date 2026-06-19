@@ -44,53 +44,6 @@ function App() {
 
       {/* Floating Right-Top Navigation Icons */}
       <div className="fixed top-6 right-6 z-50 flex gap-3">
-        {/* ERP */}
-        <a 
-          href="https://erp.minstudio.app" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="group relative flex items-center justify-center w-12 h-12 bg-white hover:bg-slate-50 border border-slate-200 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-md transition-all duration-300 hover:-translate-y-0.5"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-emerald-500 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
-          </svg>
-
-          <div className="absolute right-full mr-4 top-0 opacity-0 translate-x-4 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-400 z-50">
-            <div className="w-[220px] p-4 text-xs bg-white/95 backdrop-blur-md border border-slate-200/60 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] flex flex-col gap-3">
-              <div className="font-extrabold text-slate-800 text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-                ERP 시스템
-              </div>
-              <ul className="space-y-2 text-slate-600 font-medium leading-tight">
-                <li className="flex gap-2 break-keep">
-                  <span className="text-emerald-500 font-bold w-12 shrink-0">Front</span>
-                  <span className="flex flex-col">
-                    <span>Next.js 14</span>
-                    <span className="text-[10px] text-slate-400 -mt-0.5">(App Router)</span>
-                  </span>
-                </li>
-                <li className="flex gap-2 break-keep">
-                  <span className="text-emerald-500 font-bold w-12 shrink-0">Back</span>
-                  <span className="flex flex-col">
-                    <span>Python</span>
-                    <span className="text-[10px] text-slate-400 -mt-0.5">(FastAPI)</span>
-                  </span>
-                </li>
-                <li className="flex gap-2 break-keep">
-                  <span className="text-emerald-500 font-bold w-12 shrink-0">Deploy</span>
-                  <span className="flex flex-col">
-                    <span>AWS EC2</span>
-                    <span className="text-[10px] text-slate-400 -mt-0.5">(Docker, GitHub Actions)</span>
-                  </span>
-                </li>
-                <li className="flex gap-2 break-keep">
-                  <span className="text-emerald-500 font-bold w-12 shrink-0">DB</span>
-                  <span>PostgreSQL</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </a>
         {/* 민스튜디오 */}
         <a 
           href="https://minstudio.app" 
@@ -180,21 +133,117 @@ function App() {
             </div>
           </div>
         </a>
-
-
-
-
       </div>
 
       <main className="relative z-10 pt-12 md:pt-16 lg:pt-20">
         {/* Header Section */}
-        <header className="text-center mb-10 px-4 relative z-20">
+        <header className="text-center mb-4 px-4 relative z-20">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 tracking-tighter leading-tight break-keep">
             다양한 경험의 풀스택 엔지니어
           </h1>
-          <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto font-medium leading-relaxed break-keep mb-8">
+          <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto font-medium leading-relaxed break-keep mb-12">
             다양한 경험과 탄탄한 기본기로 웹과 모바일에 얽매이지 않고 결과물을 만들어냅니다.
           </p>
+
+          {/* Portfolio Test Sites Area */}
+          <div className="flex flex-row items-center justify-center gap-3 mt-2">
+            <div className="flex items-center gap-2 text-sm font-bold text-slate-400 uppercase tracking-widest">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+              </svg>
+              포트폴리오용 테스트 사이트
+            </div>
+            <div className="flex gap-4 sm:gap-6">
+              {/* ERP */}
+              <a 
+                href="https://erp.minstudio.app" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group relative flex items-center justify-center w-14 h-14 bg-white hover:bg-slate-50 border border-slate-200 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-md transition-all duration-300 hover:-translate-y-0.5"
+              >
+                <div style={{ position: 'relative', width: '36px', height: '36px' }} className="group-hover:scale-110 transition-transform">
+                  <i className="ph-duotone ph-buildings" style={{ color: '#10b981', fontSize: '1.6rem', position: 'absolute', top: '0', left: '0' }}></i>
+                  <i className="ph-duotone ph-database" style={{ color: '#059669', fontSize: '1.1rem', position: 'absolute', bottom: '-2px', right: '-2px', textShadow: '-1.5px -1.5px 0 #fff, 1.5px -1.5px 0 #fff, -1.5px 1.5px 0 #fff, 1.5px 1.5px 0 #fff' }}></i>
+                </div>
+
+                <div className="absolute top-full mt-4 left-1/2 -translate-x-1/2 opacity-0 -translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400 z-50 text-left">
+                  <div className="w-[220px] p-4 text-xs bg-white/95 backdrop-blur-md border border-slate-200/60 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] flex flex-col gap-3 relative">
+                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-l border-t border-slate-200/60 rotate-45"></div>
+                    <div className="font-extrabold text-slate-800 text-sm flex items-center gap-2 border-b border-slate-100 pb-2 relative z-10">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                      ERP 시스템
+                    </div>
+                    <ul className="space-y-2 text-slate-600 font-medium leading-tight relative z-10">
+                      <li className="flex gap-2 break-keep">
+                        <span className="text-emerald-500 font-bold w-12 shrink-0">Front</span>
+                        <span className="flex flex-col">
+                          <span>Next.js 14</span>
+                          <span className="text-[10px] text-slate-400 -mt-0.5">(App Router)</span>
+                        </span>
+                      </li>
+                      <li className="flex gap-2 break-keep">
+                        <span className="text-emerald-500 font-bold w-12 shrink-0">Back</span>
+                        <span className="flex flex-col">
+                          <span>Python</span>
+                          <span className="text-[10px] text-slate-400 -mt-0.5">(FastAPI)</span>
+                        </span>
+                      </li>
+                      <li className="flex gap-2 break-keep">
+                        <span className="text-emerald-500 font-bold w-12 shrink-0">Deploy</span>
+                        <span className="flex flex-col">
+                          <span>AWS EC2</span>
+                          <span className="text-[10px] text-slate-400 -mt-0.5">(Docker, GitHub Actions)</span>
+                        </span>
+                      </li>
+                      <li className="flex gap-2 break-keep">
+                        <span className="text-emerald-500 font-bold w-12 shrink-0">DB</span>
+                        <span>PostgreSQL</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </a>
+
+              {/* CCTV */}
+              <a 
+                href="https://cctv.minstudio.app" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group relative flex items-center justify-center w-14 h-14 bg-white hover:bg-slate-50 border border-slate-200 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-md transition-all duration-300 hover:-translate-y-0.5"
+              >
+                <div style={{ position: 'relative', width: '36px', height: '36px' }} className="group-hover:scale-110 transition-transform flex items-center justify-center">
+                  <i className="ph-duotone ph-security-camera" style={{ color: '#ef4444', fontSize: '1.8rem' }}></i>
+                </div>
+
+                <div className="absolute top-full mt-4 left-1/2 -translate-x-1/2 opacity-0 -translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400 z-50 text-left">
+                  <div className="w-[220px] p-4 text-xs bg-white/95 backdrop-blur-md border border-slate-200/60 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] flex flex-col gap-3 relative">
+                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-l border-t border-slate-200/60 rotate-45"></div>
+                    <div className="font-extrabold text-slate-800 text-sm flex items-center gap-2 border-b border-slate-100 pb-2 relative z-10">
+                      <span className="w-2 h-2 rounded-full bg-red-500"></span>
+                      CCTV
+                    </div>
+                    <ul className="space-y-2 text-slate-600 font-medium leading-tight relative z-10">
+                      <li className="flex gap-2 break-keep">
+                        <span className="text-red-500 font-bold w-12 shrink-0">Back</span>
+                        <span className="flex flex-col">
+                          <span>Python</span>
+                          <span className="text-[10px] text-slate-400 -mt-0.5">(FastAPI)</span>
+                        </span>
+                      </li>
+                      <li className="flex gap-2 break-keep">
+                        <span className="text-red-500 font-bold w-12 shrink-0">Deploy</span>
+                        <span className="flex flex-col">
+                          <span>AWS EC2</span>
+                          <span className="text-[10px] text-slate-400 -mt-0.5">(Docker, GitHub Actions)</span>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </a>
+
+            </div>
+          </div>
         </header>
 
         {/* Timeline Section */}
