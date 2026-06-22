@@ -91,48 +91,7 @@ function App() {
           </div>
         </a>
 
-        {/* 쿡스튜디오 */}
-        <a 
-          href="https://cook.minstudio.app" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="group relative flex items-center justify-center w-12 h-12 bg-white hover:bg-slate-50 border border-slate-200 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-md transition-all duration-300 hover:-translate-y-0.5"
-        >
-          <img src="https://cook.minstudio.app/images/logo.png" alt="쿡스튜디오" className="h-5 w-5 object-contain group-hover:scale-110 transition-transform" />
 
-          <div className="absolute right-full mr-4 top-0 opacity-0 translate-x-4 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-400 z-50">
-            <div className="w-[220px] p-4 text-xs bg-white/95 backdrop-blur-md border border-slate-200/60 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] flex flex-col gap-3">
-              <div className="font-extrabold text-slate-800 text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
-                <span className="w-2 h-2 rounded-full bg-orange-500"></span>
-                쿡레시
-              </div>
-              <ul className="space-y-2 text-slate-600 font-medium leading-tight">
-                <li className="flex gap-2 break-keep">
-                  <span className="text-orange-500 font-bold w-10 shrink-0">Web</span>
-                  <span className="flex flex-col">
-                    <span>Next.js 14</span>
-                    <span className="text-[10px] text-slate-400 -mt-0.5">(App Router, BFF)</span>
-                  </span>
-                </li>
-                <li className="flex gap-2 break-keep">
-                  <span className="text-orange-500 font-bold w-10 shrink-0">Deploy</span>
-                  <span className="flex flex-col">
-                    <span>Vercel</span>
-                    <span className="text-[10px] text-slate-400 -mt-0.5">(GitHub 연동)</span>
-                  </span>
-                </li>
-                <li className="flex gap-2 break-keep">
-                  <span className="text-orange-500 font-bold w-10 shrink-0">DB</span>
-                  <span>Oracle Cloud Database</span>
-                </li>
-                <li className="flex gap-2 break-keep">
-                  <span className="text-orange-500 font-bold w-10 shrink-0">Media</span>
-                  <span>Oracle OCI Storage</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </a>
       </div>
 
       <main className="relative z-10 pt-12 md:pt-16 lg:pt-20">
