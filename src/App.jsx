@@ -176,8 +176,9 @@ function App() {
                 rel="noopener noreferrer"
                 className="group relative flex items-center justify-center w-14 h-14 bg-white hover:bg-slate-50 border border-slate-200 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-md transition-all duration-300 hover:-translate-y-0.5"
               >
-                <div style={{ position: 'relative', width: '36px', height: '36px' }} className="group-hover:scale-110 transition-transform flex items-center justify-center">
-                  <i className="ph-duotone ph-security-camera" style={{ color: '#ef4444', fontSize: '1.8rem' }}></i>
+                <div style={{ position: 'relative', width: '36px', height: '36px' }} className="group-hover:scale-110 transition-transform">
+                  <i className="ph-duotone ph-security-camera" style={{ color: '#ef4444', fontSize: '1.6rem', position: 'absolute', top: '0', left: '0' }}></i>
+                  <i className="ph-duotone ph-broadcast" style={{ color: '#b91c1c', fontSize: '1.1rem', position: 'absolute', bottom: '-2px', right: '-2px', textShadow: '-1.5px -1.5px 0 #fff, 1.5px -1.5px 0 #fff, -1.5px 1.5px 0 #fff, 1.5px 1.5px 0 #fff' }}></i>
                 </div>
 
                 <div className="absolute top-full mt-4 left-1/2 -translate-x-1/2 opacity-0 -translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400 z-50 text-left">

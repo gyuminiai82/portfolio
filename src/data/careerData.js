@@ -5,7 +5,7 @@ export const careerData = [
     period: "2019.02 ~ 2025.12",
     duration: "6년 11개월",
     role: "기술연구소",
-    description: "-REST API 서버 개발/유지보수(Spring boot, Sybase)<br>-온닥 CRM 개발(시술스케줄 및 예약관리 시스템, Spring boot, vue3)<br>-온닥포털(하이브리드 앱(kotlin, swift, vue3))<br>-건강검진 UI 개발(html, jQuery)",
+    description: "-REST API 서버 개발/유지보수(Spring boot, Sybase)<br>-온닥 CRM 개발(시술스케줄 및 예약관리 시스템, Spring boot, vue3)<br>-온닥포털(하이브리드 앱(kotlin, swift, vue3))<br>-건강검진 UI 개발(html, jQuery)<br>-다솜메디케어 홈페이지 관리(php, mariadb)",
     techStack: ["Spring Boot", "Sybase", "Swift", "Kotlin", "Vue3"],
     projects: [
       { name: "다솜메디케어 홈페이지", image: "/images/dasom_homepage.png", isWide: true },
