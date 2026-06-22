@@ -8,6 +8,7 @@ export const careerData = [
     description: "-REST API 서버 개발/유지보수(Spring boot, Sybase)<br>-온닥 CRM 개발(시술스케줄 및 예약관리 시스템, Spring boot, vue3)<br>-온닥포털(하이브리드 앱(kotlin, swift, vue3))<br>-건강검진 UI 개발(html, jQuery)",
     techStack: ["Spring Boot", "Sybase", "Swift", "Kotlin", "Vue3"],
     projects: [
+      { name: "다솜메디케어 홈페이지", image: "/images/dasom_homepage.png", isWide: true },
       { name: "온닥 CRM", image: "/images/dasom_ondoc_crm.png", isWide: true },
       { name: "온닥펜차트", image: "/images/dasom_penchart_cropped.png" },
       { name: "무인접수", image: "/images/dasom_kiosk_cropped.png" },
