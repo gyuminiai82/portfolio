@@ -208,6 +208,56 @@ function App() {
                 </div>
               </a>
 
+              {/* Home */}
+              <a 
+                href="https://home.minstudio.app" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group relative flex items-center justify-center w-14 h-14 bg-white hover:bg-slate-50 border border-slate-200 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-md transition-all duration-300 hover:-translate-y-0.5"
+              >
+                <div style={{ position: 'relative', width: '36px', height: '36px' }} className="group-hover:scale-110 transition-transform">
+                  <i className="ph-duotone ph-house" style={{ color: '#3b82f6', fontSize: '1.6rem', position: 'absolute', top: '0', left: '0' }}></i>
+                  <i className="ph-duotone ph-database" style={{ color: '#1d4ed8', fontSize: '1.1rem', position: 'absolute', bottom: '-2px', right: '-2px', textShadow: '-1.5px -1.5px 0 #fff, 1.5px -1.5px 0 #fff, -1.5px 1.5px 0 #fff, 1.5px 1.5px 0 #fff' }}></i>
+                </div>
+
+                <div className="absolute top-full mt-4 left-1/2 -translate-x-1/2 opacity-0 -translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400 z-50 text-left">
+                  <div className="w-[220px] p-4 text-xs bg-white/95 backdrop-blur-md border border-slate-200/60 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] flex flex-col gap-3 relative">
+                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-l border-t border-slate-200/60 rotate-45"></div>
+                    <div className="font-extrabold text-slate-800 text-sm flex items-center gap-2 border-b border-slate-100 pb-2 relative z-10">
+                      <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+                      Home 시스템
+                    </div>
+                    <ul className="space-y-2 text-slate-600 font-medium leading-tight relative z-10">
+                      <li className="flex gap-2 break-keep">
+                        <span className="text-blue-500 font-bold w-12 shrink-0">Front</span>
+                        <span className="flex flex-col">
+                          <span>Next.js 14</span>
+                          <span className="text-[10px] text-slate-400 -mt-0.5">(App Router)</span>
+                        </span>
+                      </li>
+                      <li className="flex gap-2 break-keep">
+                        <span className="text-blue-500 font-bold w-12 shrink-0">Back</span>
+                        <span className="flex flex-col">
+                          <span>Python</span>
+                          <span className="text-[10px] text-slate-400 -mt-0.5">(FastAPI)</span>
+                        </span>
+                      </li>
+                      <li className="flex gap-2 break-keep">
+                        <span className="text-blue-500 font-bold w-12 shrink-0">Deploy</span>
+                        <span className="flex flex-col">
+                          <span>AWS EC2</span>
+                          <span className="text-[10px] text-slate-400 -mt-0.5">(Docker, GitHub Actions)</span>
+                        </span>
+                      </li>
+                      <li className="flex gap-2 break-keep">
+                        <span className="text-blue-500 font-bold w-12 shrink-0">DB</span>
+                        <span>PostgreSQL</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </a>
+
             </div>
           </div>
         </header>
