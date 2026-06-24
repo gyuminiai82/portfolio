@@ -229,27 +229,31 @@ function App() {
                     </div>
                     <ul className="space-y-2 text-slate-600 font-medium leading-tight relative z-10">
                       <li className="flex gap-2 break-keep">
-                        <span className="text-blue-500 font-bold w-12 shrink-0">Front</span>
+                        <span className="text-blue-500 font-bold w-[60px] shrink-0">Front</span>
                         <span className="flex flex-col">
                           <span>Next.js 14</span>
                           <span className="text-[10px] text-slate-400 -mt-0.5">(App Router)</span>
                         </span>
                       </li>
                       <li className="flex gap-2 break-keep">
-                        <span className="text-blue-500 font-bold w-12 shrink-0">Back</span>
+                        <span className="text-blue-500 font-bold w-[60px] shrink-0">Back</span>
                         <span className="flex flex-col">
                           <span>Python</span>
                           <span className="text-[10px] text-slate-400 -mt-0.5">(FastAPI)</span>
                         </span>
                       </li>
                       <li className="flex gap-2 break-keep">
-                        <span className="text-blue-500 font-bold w-12 shrink-0">Deploy</span>
+                        <span className="text-blue-500 font-bold w-[60px] shrink-0">Pipeline</span>
+                        <span>Node-RED</span>
+                      </li>
+                      <li className="flex gap-2 break-keep">
+                        <span className="text-blue-500 font-bold w-[60px] shrink-0">Deploy</span>
                         <span className="flex flex-col">
                           <span>데스크탑 PC</span>
                         </span>
                       </li>
                       <li className="flex gap-2 break-keep">
-                        <span className="text-blue-500 font-bold w-12 shrink-0">DB</span>
+                        <span className="text-blue-500 font-bold w-[60px] shrink-0">DB</span>
                         <span>PostgreSQL, TimescaleDB</span>
                       </li>
                     </ul>
