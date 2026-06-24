@@ -245,13 +245,12 @@ function App() {
                       <li className="flex gap-2 break-keep">
                         <span className="text-blue-500 font-bold w-12 shrink-0">Deploy</span>
                         <span className="flex flex-col">
-                          <span>AWS EC2</span>
-                          <span className="text-[10px] text-slate-400 -mt-0.5">(Docker, GitHub Actions)</span>
+                          <span>데스크탑 PC</span>
                         </span>
                       </li>
                       <li className="flex gap-2 break-keep">
                         <span className="text-blue-500 font-bold w-12 shrink-0">DB</span>
-                        <span>PostgreSQL</span>
+                        <span>PostgreSQL, TimescaleDB</span>
                       </li>
                     </ul>
                   </div>
