@@ -67,6 +67,7 @@ const aiWorksData = [
       { label: "DB", value: "Oracle Cloud Database" },
       { label: "Media", value: "Oracle OCI Storage" },
       { label: "Deploy", value: "Vercel", sub: "(GitHub 연동)" },
+      { label: "Content", value: "Gemini" },
       { label: "Tool", value: "Antigravity IDE" }
     ]
   },
@@ -83,6 +84,7 @@ const aiWorksData = [
       { label: "DB", value: "Oracle Cloud Database" },
       { label: "Media", value: "Oracle OCI Storage" },
       { label: "Deploy", value: "Vercel", sub: "(GitHub 연동)" },
+      { label: "Content", value: "Gemini" },
       { label: "Tool", value: "Antigravity IDE" }
     ]
   }
