@@ -135,8 +135,9 @@ export default function AIWorks() {
             </div>
 
             {/* Link Indicator */}
-            <div className={`absolute top-4 right-4 w-7 h-7 rounded-full ${work.bgLight} flex items-center justify-center opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300`}>
-              <i className={`ph-bold ph-arrow-up-right text-sm ${work.textDark}`}></i>
+            <div className={`absolute top-4 right-4 flex items-center gap-1 px-2.5 py-1 rounded-full ${work.bgLight} border border-white shadow-[0_2px_8px_rgba(0,0,0,0.05)] transition-all duration-300 group-hover:scale-105 group-hover:shadow-md group-hover:-translate-y-0.5`}>
+              <span className={`text-[10px] font-extrabold uppercase tracking-wider ${work.textDark}`}>Visit</span>
+              <i className={`ph-bold ph-arrow-up-right text-xs ${work.textDark}`}></i>
             </div>
           </a>
         ))}
