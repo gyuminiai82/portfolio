@@ -98,6 +98,7 @@ const aiWorksData = [
     iconColor: "#475569",
     isDownload: true,
     items: [
+      { label: "Language", value: "C++" },
       { label: "Type", value: "Windows App", sub: "(Setup File)" },
       { label: "Tool", value: "Antigravity IDE" }
     ]
