@@ -12,8 +12,8 @@ const aiWorksData = [
     items: [
       { label: "Front", value: "Next.js 14", sub: "(App Router)" },
       { label: "Back", value: "Python", sub: "(FastAPI)" },
-      { label: "Deploy", value: "AWS EC2", sub: "(Docker, GitHub Actions)" },
       { label: "DB", value: "PostgreSQL" },
+      { label: "Deploy", value: "AWS EC2", sub: "(Docker, GitHub Actions)" },
       { label: "Tool", value: "Antigravity IDE" }
     ]
   },
@@ -42,9 +42,9 @@ const aiWorksData = [
     items: [
       { label: "Front", value: "Next.js 14", sub: "(App Router)" },
       { label: "Back", value: "Python", sub: "(FastAPI)" },
+      { label: "DB", value: "PostgreSQL, TimescaleDB" },
       { label: "Pipeline", value: "Node-RED" },
       { label: "Deploy", value: "데스크탑 PC" },
-      { label: "DB", value: "PostgreSQL, TimescaleDB" },
       { label: "Tool", value: "Antigravity IDE" }
     ]
   },
@@ -63,10 +63,10 @@ const aiWorksData = [
     textDark: "text-purple-700",
     iconColor: "#a855f7",
     items: [
-      { label: "Web", value: "Next.js 14", sub: "(App Router)" },
-      { label: "Deploy", value: "Vercel", sub: "(GitHub 연동)" },
+      { label: "Front", value: "Next.js 14", sub: "(App Router)" },
       { label: "DB", value: "Oracle Cloud Database" },
       { label: "Media", value: "Oracle OCI Storage" },
+      { label: "Deploy", value: "Vercel", sub: "(GitHub 연동)" },
       { label: "Tool", value: "Antigravity IDE" }
     ]
   },
@@ -79,10 +79,10 @@ const aiWorksData = [
     textDark: "text-orange-700",
     iconColor: "#f97316",
     items: [
-      { label: "Web", value: "Next.js 14", sub: "(App Router)" },
-      { label: "Deploy", value: "Vercel", sub: "(GitHub 연동)" },
+      { label: "Front", value: "Next.js 14", sub: "(App Router)" },
       { label: "DB", value: "Oracle Cloud Database" },
       { label: "Media", value: "Oracle OCI Storage" },
+      { label: "Deploy", value: "Vercel", sub: "(GitHub 연동)" },
       { label: "Tool", value: "Antigravity IDE" }
     ]
   }
