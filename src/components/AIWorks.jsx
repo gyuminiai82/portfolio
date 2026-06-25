@@ -116,9 +116,15 @@ export default function AIWorks() {
                 <div className={`w-12 h-12 rounded-xl ${work.bgLight} flex items-center justify-center group-hover:scale-105 transition-transform duration-300`}>
                   {work.customIcon ? work.customIcon : <i className={`ph-duotone ${work.icon}`} style={{ color: work.iconColor, fontSize: '1.6rem' }}></i>}
                 </div>
-                <h3 className={`text-lg font-bold ${work.textDark}`}>
-                  {work.title}
-                </h3>
+                <div className="flex flex-col justify-center">
+                  <h3 className={`text-lg font-bold ${work.textDark} group-hover:underline decoration-2 underline-offset-4`}>
+                    {work.title}
+                  </h3>
+                  <div className="text-[11px] text-blue-500 font-medium mt-0.5 flex items-center gap-1 opacity-70 group-hover:opacity-100 transition-opacity">
+                    <i className="ph-bold ph-link"></i>
+                    {work.url.replace('https://', '')}
+                  </div>
+                </div>
               </div>
 
               <ul className="space-y-1.5">
