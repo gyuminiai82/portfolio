@@ -43,63 +43,7 @@ function App() {
 
       <NavIndicator data={careerData} />
 
-      {/* Floating Right-Top Navigation Icons */}
-      <div className="fixed top-6 right-6 z-50 flex gap-3">
-        {/* 민스튜디오 */}
-        <div className="relative group flex items-center justify-center">
-          {/* Animated gradient glow effect */}
-          <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
-          
-          <a 
-            href="https://minstudio.app" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="relative flex items-center justify-center w-14 h-14 bg-white hover:bg-slate-50 border border-slate-200/50 rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_24px_rgba(59,130,246,0.3)] transition-all duration-300 hover:-translate-y-1 hover:scale-110"
-          >
-            <div style={{ position: 'relative', width: '36px', height: '36px' }}>
-              <i className="ph-duotone ph-device-mobile group-hover:-translate-y-0.5 transition-all" style={{ color: '#6c757d', fontSize: '1.3rem', position: 'absolute', top: '-2px', right: '2px' }}></i>
-              <i className="ph-duotone ph-globe group-hover:scale-110 transition-transform" style={{ color: '#3b82f6', fontSize: '1.5rem', position: 'absolute', bottom: '-2px', left: '-2px' }}></i>
-              <i className="ph-duotone ph-cursor group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-transform" style={{ color: '#1e293b', fontSize: '1.1rem', position: 'absolute', bottom: '-4px', left: '16px', transform: 'rotate(-15deg)', textShadow: '-1.5px -1.5px 0 #fff, 1.5px -1.5px 0 #fff, -1.5px 1.5px 0 #fff, 1.5px 1.5px 0 #fff' }}></i>
-            </div>
-          </a>
 
-          <div className="absolute right-full mr-5 top-1/2 -translate-y-1/2 opacity-0 translate-x-4 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-400 z-50">
-            <div className="w-[220px] p-4 text-xs bg-white/95 backdrop-blur-md border border-slate-200/60 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] flex flex-col gap-3 relative">
-              <div className="absolute top-1/2 right-[-6px] -translate-y-1/2 w-3 h-3 bg-white border-r border-t border-slate-200/60 rotate-45"></div>
-              <div className="font-extrabold text-slate-800 text-sm flex items-center gap-2 border-b border-slate-100 pb-2 relative z-10">
-                <span className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.6)] animate-pulse"></span>
-                민스튜디오
-              </div>
-              <ul className="space-y-2 text-slate-600 font-medium leading-tight relative z-10">
-                <li className="flex gap-2 break-keep">
-                  <span className="text-blue-500 font-bold w-10 shrink-0">Web</span>
-                  <span className="flex flex-col">
-                    <span>Next.js 14</span>
-                    <span className="text-[10px] text-slate-400 -mt-0.5">(App Router, BFF)</span>
-                  </span>
-                </li>
-                <li className="flex gap-2 break-keep">
-                  <span className="text-blue-500 font-bold w-10 shrink-0">Deploy</span>
-                  <span className="flex flex-col">
-                    <span>Vercel</span>
-                    <span className="text-[10px] text-slate-400 -mt-0.5">(GitHub 연동)</span>
-                  </span>
-                </li>
-                <li className="flex gap-2 break-keep">
-                  <span className="text-blue-500 font-bold w-10 shrink-0">DB</span>
-                  <span>Oracle Cloud Database</span>
-                </li>
-                <li className="flex gap-2 break-keep">
-                  <span className="text-blue-500 font-bold w-10 shrink-0">Media</span>
-                  <span>Oracle OCI Storage</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-
-      </div>
 
       <main className="relative z-10 pt-12 md:pt-16 lg:pt-20">
         {/* Header Section */}

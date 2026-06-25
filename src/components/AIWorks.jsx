@@ -44,6 +44,27 @@ const aiWorksData = [
       { label: "Deploy", value: "데스크탑 PC" },
       { label: "DB", value: "PostgreSQL, TimescaleDB" }
     ]
+  },
+  {
+    title: "민스튜디오",
+    url: "https://minstudio.app",
+    customIcon: (
+      <div style={{ position: 'relative', width: '36px', height: '36px' }}>
+        <i className="ph-duotone ph-device-mobile" style={{ color: '#6c757d', fontSize: '1.3rem', position: 'absolute', top: '-2px', right: '2px' }}></i>
+        <i className="ph-duotone ph-globe" style={{ color: '#3b82f6', fontSize: '1.5rem', position: 'absolute', bottom: '-2px', left: '-2px' }}></i>
+        <i className="ph-duotone ph-cursor" style={{ color: '#1e293b', fontSize: '1.1rem', position: 'absolute', bottom: '-4px', left: '16px', transform: 'rotate(-15deg)', textShadow: '-1.5px -1.5px 0 transparent, 1.5px -1.5px 0 transparent, -1.5px 1.5px 0 transparent, 1.5px 1.5px 0 transparent' }}></i>
+      </div>
+    ),
+    color: "purple",
+    bgLight: "bg-purple-50",
+    textDark: "text-purple-700",
+    iconColor: "#a855f7",
+    items: [
+      { label: "Web", value: "Next.js 14", sub: "(App Router, BFF)" },
+      { label: "Deploy", value: "Vercel", sub: "(GitHub 연동)" },
+      { label: "DB", value: "Oracle Cloud Database" },
+      { label: "Media", value: "Oracle OCI Storage" }
+    ]
   }
 ];
 
@@ -58,7 +79,7 @@ export default function AIWorks() {
           <h2 className="text-2xl md:text-3xl font-extrabold text-slate-800 tracking-tight">AI 활용 작업물</h2>
         </legend>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
         {aiWorksData.map((work, idx) => (
           <a
             key={idx}
@@ -73,7 +94,7 @@ export default function AIWorks() {
             <div className="relative z-10">
               <div className="flex items-center gap-4 mb-6">
                 <div className={`w-14 h-14 rounded-2xl ${work.bgLight} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                  <i className={`ph-duotone ${work.icon}`} style={{ color: work.iconColor, fontSize: '2rem' }}></i>
+                  {work.customIcon ? work.customIcon : <i className={`ph-duotone ${work.icon}`} style={{ color: work.iconColor, fontSize: '2rem' }}></i>}
                 </div>
                 <h3 className={`text-xl font-bold ${work.textDark}`}>
                   {work.title}
