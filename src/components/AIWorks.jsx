@@ -50,14 +50,15 @@ const aiWorksData = [
 export default function AIWorks() {
   return (
     <div className="max-w-5xl mx-auto mt-16 mb-24 px-4 text-left relative z-20">
-      <div className="flex items-center gap-3 mb-8">
-        <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-[0_8px_16px_rgba(99,102,241,0.3)]">
-          <i className="ph-duotone ph-robot text-white text-2xl"></i>
-        </div>
-        <h2 className="text-2xl md:text-3xl font-extrabold text-slate-800 tracking-tight">AI 활용 작업물</h2>
-      </div>
+      <fieldset className="border-2 border-slate-200/80 rounded-[2rem] p-6 md:p-8">
+        <legend className="ml-4 md:ml-6 px-4 flex items-center gap-3">
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-[0_8px_16px_rgba(99,102,241,0.3)]">
+            <i className="ph-duotone ph-robot text-white text-2xl"></i>
+          </div>
+          <h2 className="text-2xl md:text-3xl font-extrabold text-slate-800 tracking-tight">AI 활용 작업물</h2>
+        </legend>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
         {aiWorksData.map((work, idx) => (
           <a
             key={idx}
@@ -98,7 +99,8 @@ export default function AIWorks() {
             </div>
           </a>
         ))}
-      </div>
+        </div>
+      </fieldset>
     </div>
   );
 }
