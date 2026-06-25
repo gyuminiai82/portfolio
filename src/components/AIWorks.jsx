@@ -109,11 +109,16 @@ export default function AIWorks() {
   return (
     <div className="max-w-6xl mx-auto mt-10 mb-16 px-4 text-left relative z-20">
       <fieldset className="border border-slate-200/80 rounded-3xl p-5 md:p-6 pt-4">
-        <legend className="ml-4 px-3 flex items-center gap-2">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-sm">
+        <legend className="ml-4 px-3 flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-sm shrink-0">
             <i className="ph-duotone ph-sparkle text-white text-xl"></i>
           </div>
-          <h2 className="text-xl font-extrabold text-slate-800 tracking-tight">AI 활용 작업물</h2>
+          <div className="flex flex-col">
+            <h2 className="text-xl font-extrabold text-slate-800 tracking-tight">AI 활용 작업물</h2>
+            <p className="text-[12px] text-slate-500 font-medium mt-0.5 tracking-tight">
+              "AI가 과연 어디까지 만들 수 있을까?" — 단순 보조를 넘어 기획부터 배포까지, AI 개발의 한계를 테스트하며 완성한 결과물입니다.
+            </p>
+          </div>
         </legend>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
