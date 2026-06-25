@@ -65,6 +65,20 @@ const aiWorksData = [
       { label: "DB", value: "Oracle Cloud Database" },
       { label: "Media", value: "Oracle OCI Storage" }
     ]
+  },
+  {
+    title: "Cook",
+    url: "https://cook.minstudio.app",
+    icon: "ph-cooking-pot",
+    color: "orange",
+    bgLight: "bg-orange-50",
+    textDark: "text-orange-700",
+    iconColor: "#f97316",
+    items: [
+      { label: "Front", value: "Next.js 14", sub: "(App Router)" },
+      { label: "Back", value: "Python", sub: "(FastAPI)" },
+      { label: "Deploy", value: "Vercel / AWS EC2" }
+    ]
   }
 ];
 
