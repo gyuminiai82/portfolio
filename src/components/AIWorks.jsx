@@ -13,7 +13,8 @@ const aiWorksData = [
       { label: "Front", value: "Next.js 14", sub: "(App Router)" },
       { label: "Back", value: "Python", sub: "(FastAPI)" },
       { label: "Deploy", value: "AWS EC2", sub: "(Docker, GitHub Actions)" },
-      { label: "DB", value: "PostgreSQL" }
+      { label: "DB", value: "PostgreSQL" },
+      { label: "Tool", value: "Antigravity IDE" }
     ]
   },
   {
@@ -26,7 +27,8 @@ const aiWorksData = [
     iconColor: "#ef4444",
     items: [
       { label: "Back", value: "Python", sub: "(FastAPI)" },
-      { label: "Deploy", value: "AWS EC2", sub: "(Docker, GitHub Actions)" }
+      { label: "Deploy", value: "AWS EC2", sub: "(Docker, GitHub Actions)" },
+      { label: "Tool", value: "Antigravity IDE" }
     ]
   },
   {
@@ -42,7 +44,8 @@ const aiWorksData = [
       { label: "Back", value: "Python", sub: "(FastAPI)" },
       { label: "Pipeline", value: "Node-RED" },
       { label: "Deploy", value: "데스크탑 PC" },
-      { label: "DB", value: "PostgreSQL, TimescaleDB" }
+      { label: "DB", value: "PostgreSQL, TimescaleDB" },
+      { label: "Tool", value: "Antigravity IDE" }
     ]
   },
   {
@@ -63,7 +66,8 @@ const aiWorksData = [
       { label: "Web", value: "Next.js 14", sub: "(App Router)" },
       { label: "Deploy", value: "Vercel", sub: "(GitHub 연동)" },
       { label: "DB", value: "Oracle Cloud Database" },
-      { label: "Media", value: "Oracle OCI Storage" }
+      { label: "Media", value: "Oracle OCI Storage" },
+      { label: "Tool", value: "Antigravity IDE" }
     ]
   },
   {
@@ -78,7 +82,8 @@ const aiWorksData = [
       { label: "Web", value: "Next.js 14", sub: "(App Router)" },
       { label: "Deploy", value: "Vercel", sub: "(GitHub 연동)" },
       { label: "DB", value: "Oracle Cloud Database" },
-      { label: "Media", value: "Oracle OCI Storage" }
+      { label: "Media", value: "Oracle OCI Storage" },
+      { label: "Tool", value: "Antigravity IDE" }
     ]
   }
 ];
