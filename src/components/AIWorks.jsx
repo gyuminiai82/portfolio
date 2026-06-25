@@ -60,7 +60,7 @@ const aiWorksData = [
     textDark: "text-purple-700",
     iconColor: "#a855f7",
     items: [
-      { label: "Web", value: "Next.js 14", sub: "(App Router, BFF)" },
+      { label: "Web", value: "Next.js 14", sub: "(App Router)" },
       { label: "Deploy", value: "Vercel", sub: "(GitHub 연동)" },
       { label: "DB", value: "Oracle Cloud Database" },
       { label: "Media", value: "Oracle OCI Storage" }
@@ -75,7 +75,7 @@ const aiWorksData = [
     textDark: "text-orange-700",
     iconColor: "#f97316",
     items: [
-      { label: "Web", value: "Next.js 14", sub: "(App Router, BFF)" },
+      { label: "Web", value: "Next.js 14", sub: "(App Router)" },
       { label: "Deploy", value: "Vercel", sub: "(GitHub 연동)" },
       { label: "DB", value: "Oracle Cloud Database" },
       { label: "Media", value: "Oracle OCI Storage" }
