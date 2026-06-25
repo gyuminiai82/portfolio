@@ -67,7 +67,7 @@ const aiWorksData = [
     ]
   },
   {
-    title: "Cook",
+    title: "쿡레시",
     url: "https://cook.minstudio.app",
     icon: "ph-cooking-pot",
     color: "orange",
@@ -75,9 +75,10 @@ const aiWorksData = [
     textDark: "text-orange-700",
     iconColor: "#f97316",
     items: [
-      { label: "Front", value: "Next.js 14", sub: "(App Router)" },
-      { label: "Back", value: "Python", sub: "(FastAPI)" },
-      { label: "Deploy", value: "Vercel / AWS EC2" }
+      { label: "Web", value: "Next.js 14", sub: "(App Router, BFF)" },
+      { label: "Deploy", value: "Vercel", sub: "(GitHub 연동)" },
+      { label: "DB", value: "Oracle Cloud Database" },
+      { label: "Media", value: "Oracle OCI Storage" }
     ]
   }
 ];
