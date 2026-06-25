@@ -87,6 +87,20 @@ const aiWorksData = [
       { label: "Content", value: "Gemini" },
       { label: "Tool", value: "Antigravity IDE" }
     ]
+  },
+  {
+    title: "민에디터",
+    url: "https://devminihouse.mycafe24.com/file/MinEditor_Setup.zip",
+    icon: "ph-file-zip",
+    color: "slate",
+    bgLight: "bg-slate-100",
+    textDark: "text-slate-700",
+    iconColor: "#475569",
+    isDownload: true,
+    items: [
+      { label: "Type", value: "Windows App", sub: "(Setup File)" },
+      { label: "Tool", value: "Antigravity IDE" }
+    ]
   }
 ];
 
@@ -122,9 +136,9 @@ export default function AIWorks() {
                   <h3 className={`text-lg font-bold ${work.textDark} group-hover:underline decoration-2 underline-offset-4`}>
                     {work.title}
                   </h3>
-                  <div className="text-[11px] text-blue-500 font-medium mt-0.5 flex items-center gap-1 opacity-70 group-hover:opacity-100 transition-opacity">
-                    <i className="ph-bold ph-link"></i>
-                    {work.url.replace('https://', '')}
+                  <div className={`text-[11px] ${work.isDownload ? 'text-slate-500' : 'text-blue-500'} font-medium mt-0.5 flex items-center gap-1 opacity-70 group-hover:opacity-100 transition-opacity`}>
+                    <i className={`ph-bold ${work.isDownload ? 'ph-download-simple' : 'ph-link'}`}></i>
+                    {work.isDownload ? 'MinEditor_Setup.zip' : work.url.replace('https://', '')}
                   </div>
                 </div>
               </div>
@@ -144,8 +158,10 @@ export default function AIWorks() {
 
             {/* Link Indicator */}
             <div className={`absolute top-4 right-4 flex items-center gap-1 px-2.5 py-1 rounded-full ${work.bgLight} border border-white shadow-[0_2px_8px_rgba(0,0,0,0.05)] transition-all duration-300 group-hover:scale-105 group-hover:shadow-md group-hover:-translate-y-0.5`}>
-              <span className={`text-[10px] font-extrabold uppercase tracking-wider ${work.textDark}`}>Visit</span>
-              <i className={`ph-bold ph-arrow-up-right text-xs ${work.textDark}`}></i>
+              <span className={`text-[10px] font-extrabold uppercase tracking-wider ${work.textDark}`}>
+                {work.isDownload ? 'Download' : 'Visit'}
+              </span>
+              <i className={`ph-bold ${work.isDownload ? 'ph-download-simple' : 'ph-arrow-up-right'} text-xs ${work.textDark}`}></i>
             </div>
           </a>
         ))}
