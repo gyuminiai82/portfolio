@@ -85,44 +85,44 @@ const aiWorksData = [
 
 export default function AIWorks() {
   return (
-    <div className="max-w-5xl mx-auto mt-16 mb-24 px-4 text-left relative z-20">
-      <fieldset className="border-2 border-slate-200/80 rounded-[2rem] p-6 md:p-8">
-        <legend className="ml-4 md:ml-6 px-4 flex items-center gap-3">
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-[0_8px_16px_rgba(99,102,241,0.3)]">
-            <i className="ph-duotone ph-robot text-white text-2xl"></i>
+    <div className="max-w-6xl mx-auto mt-10 mb-16 px-4 text-left relative z-20">
+      <fieldset className="border border-slate-200/80 rounded-3xl p-5 md:p-6 pt-4">
+        <legend className="ml-4 px-3 flex items-center gap-2">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-sm">
+            <i className="ph-duotone ph-sparkle text-white text-xl"></i>
           </div>
-          <h2 className="text-2xl md:text-3xl font-extrabold text-slate-800 tracking-tight">AI 활용 작업물</h2>
+          <h2 className="text-xl font-extrabold text-slate-800 tracking-tight">AI 활용 작업물</h2>
         </legend>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
         {aiWorksData.map((work, idx) => (
           <a
             key={idx}
             href={work.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative flex flex-col p-6 bg-white rounded-3xl border border-slate-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-1.5 overflow-hidden"
+            className="group relative flex flex-col p-4 bg-white rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 overflow-hidden"
           >
             {/* Hover Gradient Background */}
             <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             
             <div className="relative z-10">
-              <div className="flex items-center gap-4 mb-6">
-                <div className={`w-14 h-14 rounded-2xl ${work.bgLight} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                  {work.customIcon ? work.customIcon : <i className={`ph-duotone ${work.icon}`} style={{ color: work.iconColor, fontSize: '2rem' }}></i>}
+              <div className="flex items-center gap-3 mb-4">
+                <div className={`w-12 h-12 rounded-xl ${work.bgLight} flex items-center justify-center group-hover:scale-105 transition-transform duration-300`}>
+                  {work.customIcon ? work.customIcon : <i className={`ph-duotone ${work.icon}`} style={{ color: work.iconColor, fontSize: '1.6rem' }}></i>}
                 </div>
-                <h3 className={`text-xl font-bold ${work.textDark}`}>
+                <h3 className={`text-lg font-bold ${work.textDark}`}>
                   {work.title}
                 </h3>
               </div>
 
-              <ul className="space-y-3">
+              <ul className="space-y-1.5">
                 {work.items.map((item, i) => (
-                  <li key={i} className="flex gap-3 text-sm">
-                    <span className={`font-bold w-[72px] shrink-0 ${work.textDark} opacity-80`}>{item.label}</span>
-                    <span className="flex flex-col text-slate-600 font-medium">
+                  <li key={i} className="flex gap-2 text-[13px] leading-tight">
+                    <span className={`font-bold w-[60px] shrink-0 ${work.textDark} opacity-80`}>{item.label}</span>
+                    <span className="flex flex-wrap items-baseline gap-1 text-slate-600 font-medium">
                       <span>{item.value}</span>
-                      {item.sub && <span className="text-[11px] text-slate-400 mt-0.5">{item.sub}</span>}
+                      {item.sub && <span className="text-[11px] text-slate-400">{item.sub}</span>}
                     </span>
                   </li>
                 ))}
@@ -130,8 +130,8 @@ export default function AIWorks() {
             </div>
 
             {/* Link Indicator */}
-            <div className={`absolute top-6 right-6 w-8 h-8 rounded-full ${work.bgLight} flex items-center justify-center opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300`}>
-              <i className={`ph-bold ph-arrow-up-right ${work.textDark}`}></i>
+            <div className={`absolute top-4 right-4 w-7 h-7 rounded-full ${work.bgLight} flex items-center justify-center opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300`}>
+              <i className={`ph-bold ph-arrow-up-right text-sm ${work.textDark}`}></i>
             </div>
           </a>
         ))}
