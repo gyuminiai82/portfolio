@@ -144,7 +144,7 @@ export default function AIWorks() {
                   </h3>
                   <div className={`text-[11px] ${work.isDownload ? 'text-slate-500' : 'text-blue-500'} font-medium mt-0.5 flex items-center gap-1 opacity-70 group-hover:opacity-100 transition-opacity`}>
                     <i className={`ph-bold ${work.isDownload ? 'ph-download-simple' : 'ph-link'}`}></i>
-                    {work.isDownload ? 'MinEditor_Setup.zip' : work.url.replace('https://', '')}
+                    <span className="blur-[3px] select-none">{work.isDownload ? 'MinEditor_Setup.zip' : work.url.replace('https://', '')}</span>
                   </div>
                 </div>
               </div>
