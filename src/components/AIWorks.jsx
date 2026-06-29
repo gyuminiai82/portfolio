@@ -31,7 +31,7 @@ const aiWorksData = [
       { label: "Tool", value: "Antigravity IDE" }
     ]
   },
-  {
+  /* {
     title: "Home 시스템",
     url: "https://home.minstudio.app",
     icon: "ph-house",
@@ -47,7 +47,7 @@ const aiWorksData = [
       { label: "Deploy", value: "데스크탑 PC" },
       { label: "Tool", value: "Antigravity IDE" }
     ]
-  },
+  }, */
   {
     title: "민스튜디오",
     url: "https://minstudio.app",
@@ -144,7 +144,7 @@ export default function AIWorks() {
                   </h3>
                   <div className={`text-[11px] ${work.isDownload ? 'text-slate-500' : 'text-blue-500'} font-medium mt-0.5 flex items-center gap-1 opacity-70 group-hover:opacity-100 transition-opacity`}>
                     <i className={`ph-bold ${work.isDownload ? 'ph-download-simple' : 'ph-link'}`}></i>
-                    <span className="blur-[3px] select-none">{work.isDownload ? 'MinEditor_Setup.zip' : work.url.replace('https://', '')}</span>
+                    {work.isDownload ? 'MinEditor_Setup.zip' : work.url.replace('https://', '')}
                   </div>
                 </div>
               </div>
