@@ -9,6 +9,7 @@ const aiWorksData = [
     bgLight: "bg-emerald-50",
     textDark: "text-emerald-700",
     iconColor: "#10b981",
+    isSso: true,
     items: [
       { label: "Front", value: "Next.js 14", sub: "(App Router)" },
       { label: "Back", value: "Python", sub: "(FastAPI)" },
@@ -104,6 +105,22 @@ const aiWorksData = [
     ]
   },
   {
+    title: "쇼핑몰",
+    url: "https://shop.minstudio.app",
+    icon: "ph-shopping-cart",
+    color: "pink",
+    bgLight: "bg-pink-50",
+    textDark: "text-pink-700",
+    iconColor: "#ec4899",
+    isSso: true,
+    items: [
+      { label: "Front", value: "Next.js 14", sub: "(App Router)" },
+      { label: "DB", value: "PostgreSQL" },
+      { label: "Deploy", value: "데스크탑 PC", sub: "(GitHub Actions)" },
+      { label: "Tool", value: "Antigravity IDE" }
+    ]
+  },
+  {
     title: "SSO 서버",
     url: "https://auth.minstudio.app",
     icon: "ph-key",
@@ -111,6 +128,7 @@ const aiWorksData = [
     bgLight: "bg-cyan-50",
     textDark: "text-cyan-700",
     iconColor: "#06b6d4",
+    isSso: true,
     items: [
       { label: "Front", value: "Next.js 14", sub: "(App Router)" },
       { label: "DB", value: "PostgreSQL" },
@@ -123,6 +141,63 @@ const aiWorksData = [
 ];
 
 export default function AIWorks() {
+  const ssoWorks = aiWorksData.filter(w => w.isSso);
+  const otherWorks = aiWorksData.filter(w => !w.isSso);
+
+  const renderCards = (works) => (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {works.map((work, idx) => (
+        <a
+          key={idx}
+          href={work.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative flex flex-col p-4 bg-white rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+        >
+          {/* Hover Gradient Background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          
+          <div className="relative z-10">
+            <div className="flex items-center gap-3 mb-4">
+              <div className={`w-12 h-12 rounded-xl ${work.bgLight} flex items-center justify-center group-hover:scale-105 transition-transform duration-300`}>
+                {work.customIcon ? work.customIcon : <i className={`ph-duotone ${work.icon}`} style={{ color: work.iconColor, fontSize: '1.6rem' }}></i>}
+              </div>
+              <div className="flex flex-col justify-center">
+                <h3 className={`text-lg font-bold ${work.textDark} group-hover:underline decoration-2 underline-offset-4`}>
+                  {work.title}
+                </h3>
+                <div className={`text-[11px] ${work.isDownload ? 'text-slate-500' : 'text-blue-500'} font-medium mt-0.5 flex items-center gap-1 opacity-70 group-hover:opacity-100 transition-opacity`}>
+                  <i className={`ph-bold ${work.isDownload ? 'ph-download-simple' : 'ph-link'}`}></i>
+                  {work.isDownload ? 'MinEditor_Setup.zip' : work.url.replace('https://', '')}
+                </div>
+              </div>
+            </div>
+
+            <ul className="space-y-1.5">
+              {work.items.map((item, i) => (
+                <li key={i} className="flex gap-2 text-[13px] leading-tight">
+                  <span className={`font-bold w-[60px] shrink-0 ${work.textDark} opacity-80`}>{item.label}</span>
+                  <span className="flex flex-wrap items-baseline gap-1 text-slate-600 font-medium">
+                    <span>{item.value}</span>
+                    {item.sub && <span className="text-[11px] text-slate-400">{item.sub}</span>}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Link Indicator */}
+          <div className={`absolute top-4 right-4 flex items-center gap-1 px-2.5 py-1 rounded-full ${work.bgLight} border border-white shadow-[0_2px_8px_rgba(0,0,0,0.05)] transition-all duration-300 group-hover:scale-105 group-hover:shadow-md group-hover:-translate-y-0.5`}>
+            <span className={`text-[10px] font-extrabold uppercase tracking-wider ${work.textDark}`}>
+              {work.isDownload ? 'Download' : 'Visit'}
+            </span>
+            <i className={`ph-bold ${work.isDownload ? 'ph-download-simple' : 'ph-arrow-up-right'} text-xs ${work.textDark}`}></i>
+          </div>
+        </a>
+      ))}
+    </div>
+  );
+
   return (
     <div className="max-w-6xl mx-auto mt-10 mb-16 px-4 text-left relative z-20">
       <fieldset className="border border-slate-200/80 rounded-3xl p-5 md:p-6 pt-4">
@@ -138,56 +213,26 @@ export default function AIWorks() {
           </div>
         </legend>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
-        {aiWorksData.map((work, idx) => (
-          <a
-            key={idx}
-            href={work.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative flex flex-col p-4 bg-white rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 overflow-hidden"
-          >
-            {/* Hover Gradient Background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            
-            <div className="relative z-10">
-              <div className="flex items-center gap-3 mb-4">
-                <div className={`w-12 h-12 rounded-xl ${work.bgLight} flex items-center justify-center group-hover:scale-105 transition-transform duration-300`}>
-                  {work.customIcon ? work.customIcon : <i className={`ph-duotone ${work.icon}`} style={{ color: work.iconColor, fontSize: '1.6rem' }}></i>}
-                </div>
-                <div className="flex flex-col justify-center">
-                  <h3 className={`text-lg font-bold ${work.textDark} group-hover:underline decoration-2 underline-offset-4`}>
-                    {work.title}
-                  </h3>
-                  <div className={`text-[11px] ${work.isDownload ? 'text-slate-500' : 'text-blue-500'} font-medium mt-0.5 flex items-center gap-1 opacity-70 group-hover:opacity-100 transition-opacity`}>
-                    <i className={`ph-bold ${work.isDownload ? 'ph-download-simple' : 'ph-link'}`}></i>
-                    {work.isDownload ? 'MinEditor_Setup.zip' : work.url.replace('https://', '')}
-                  </div>
-                </div>
-              </div>
+        <div className="mt-4 mb-2">
+           <h3 className="text-[13px] font-bold text-slate-700 flex items-center gap-2 mb-3 ml-1">
+             <div className="w-6 h-6 rounded-md bg-blue-50 border border-blue-100 flex items-center justify-center">
+               <i className="ph-fill ph-key text-blue-500 text-sm"></i>
+             </div>
+             SSO 연동 생태계
+           </h3>
+           {renderCards(ssoWorks)}
+        </div>
 
-              <ul className="space-y-1.5">
-                {work.items.map((item, i) => (
-                  <li key={i} className="flex gap-2 text-[13px] leading-tight">
-                    <span className={`font-bold w-[60px] shrink-0 ${work.textDark} opacity-80`}>{item.label}</span>
-                    <span className="flex flex-wrap items-baseline gap-1 text-slate-600 font-medium">
-                      <span>{item.value}</span>
-                      {item.sub && <span className="text-[11px] text-slate-400">{item.sub}</span>}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <div className="w-full h-px bg-slate-100/80 my-6"></div>
 
-            {/* Link Indicator */}
-            <div className={`absolute top-4 right-4 flex items-center gap-1 px-2.5 py-1 rounded-full ${work.bgLight} border border-white shadow-[0_2px_8px_rgba(0,0,0,0.05)] transition-all duration-300 group-hover:scale-105 group-hover:shadow-md group-hover:-translate-y-0.5`}>
-              <span className={`text-[10px] font-extrabold uppercase tracking-wider ${work.textDark}`}>
-                {work.isDownload ? 'Download' : 'Visit'}
-              </span>
-              <i className={`ph-bold ${work.isDownload ? 'ph-download-simple' : 'ph-arrow-up-right'} text-xs ${work.textDark}`}></i>
-            </div>
-          </a>
-        ))}
+        <div className="mb-2">
+           <h3 className="text-[13px] font-bold text-slate-700 flex items-center gap-2 mb-3 ml-1">
+             <div className="w-6 h-6 rounded-md bg-slate-50 border border-slate-100 flex items-center justify-center">
+               <i className="ph-fill ph-squares-four text-slate-500 text-sm"></i>
+             </div>
+             개별 프로젝트
+           </h3>
+           {renderCards(otherWorks)}
         </div>
       </fieldset>
     </div>
