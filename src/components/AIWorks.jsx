@@ -104,22 +104,6 @@ const aiWorksData = [
     ]
   },
   {
-    title: "쇼핑몰",
-    url: "https://shop.minstudio.app",
-    icon: "ph-shopping-cart",
-    color: "pink",
-    bgLight: "bg-pink-50",
-    textDark: "text-pink-700",
-    iconColor: "#ec4899",
-    isSso: true,
-    items: [
-      { label: "Front", value: "Next.js 14", sub: "(App Router)" },
-      { label: "DB", value: "PostgreSQL" },
-      { label: "Deploy", value: "데스크탑 PC", sub: "(GitHub Actions)" },
-      { label: "Tool", value: "Antigravity IDE" }
-    ]
-  },
-  {
     title: "SSO 서버",
     url: "https://auth.minstudio.app",
     icon: "ph-key",
@@ -133,6 +117,22 @@ const aiWorksData = [
       { label: "DB", value: "PostgreSQL" },
       { label: "Session", value: "Redis" },
       { label: "OS", value: "Ubuntu" },
+      { label: "Deploy", value: "데스크탑 PC", sub: "(GitHub Actions)" },
+      { label: "Tool", value: "Antigravity IDE" }
+    ]
+  },
+  {
+    title: "쇼핑몰",
+    url: "https://shop.minstudio.app",
+    icon: "ph-shopping-cart",
+    color: "pink",
+    bgLight: "bg-pink-50",
+    textDark: "text-pink-700",
+    iconColor: "#ec4899",
+    isSso: true,
+    items: [
+      { label: "Front", value: "Next.js 14", sub: "(App Router)" },
+      { label: "DB", value: "PostgreSQL" },
       { label: "Deploy", value: "데스크탑 PC", sub: "(GitHub Actions)" },
       { label: "Tool", value: "Antigravity IDE" }
     ]
