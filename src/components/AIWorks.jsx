@@ -214,24 +214,24 @@ export default function AIWorks() {
 
         <div className="mt-4 mb-2">
            <h3 className="text-[13px] font-bold text-slate-700 flex items-center gap-2 mb-3 ml-1">
-             <div className="w-6 h-6 rounded-md bg-blue-50 border border-blue-100 flex items-center justify-center">
-               <i className="ph-fill ph-key text-blue-500 text-sm"></i>
-             </div>
-             SSO 연동 생태계
-           </h3>
-           {renderCards(ssoWorks)}
-        </div>
-
-        <div className="w-full h-px bg-slate-100/80 my-6"></div>
-
-        <div className="mb-2">
-           <h3 className="text-[13px] font-bold text-slate-700 flex items-center gap-2 mb-3 ml-1">
              <div className="w-6 h-6 rounded-md bg-slate-50 border border-slate-100 flex items-center justify-center">
                <i className="ph-fill ph-squares-four text-slate-500 text-sm"></i>
              </div>
              개별 프로젝트
            </h3>
            {renderCards(otherWorks)}
+        </div>
+
+        <div className="w-full h-px bg-slate-100/80 my-6"></div>
+
+        <div className="mb-2">
+           <h3 className="text-[13px] font-bold text-slate-700 flex items-center gap-2 mb-3 ml-1">
+             <div className="w-6 h-6 rounded-md bg-blue-50 border border-blue-100 flex items-center justify-center">
+               <i className="ph-fill ph-key text-blue-500 text-sm"></i>
+             </div>
+             SSO 연동 생태계
+           </h3>
+           {renderCards(ssoWorks)}
         </div>
       </fieldset>
     </div>
