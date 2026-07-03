@@ -113,7 +113,8 @@ const aiWorksData = [
     iconColor: "#06b6d4",
     items: [
       { label: "Front", value: "Next.js 14", sub: "(App Router)" },
-      { label: "DB", value: "Oracle Cloud Database" },
+      { label: "DB", value: "PostgreSQL" },
+      { label: "Session", value: "Redis" },
       { label: "Deploy", value: "Vercel", sub: "(GitHub 연동)" },
       { label: "Tool", value: "Antigravity IDE" }
     ]
