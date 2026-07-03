@@ -102,6 +102,21 @@ const aiWorksData = [
       { label: "Type", value: "Windows App", sub: "(Setup File)" },
       { label: "Tool", value: "Antigravity IDE" }
     ]
+  },
+  {
+    title: "SSO 서버",
+    url: "https://auth.minstudio.app",
+    icon: "ph-key",
+    color: "cyan",
+    bgLight: "bg-cyan-50",
+    textDark: "text-cyan-700",
+    iconColor: "#06b6d4",
+    items: [
+      { label: "Front", value: "Next.js 14", sub: "(App Router)" },
+      { label: "DB", value: "Oracle Cloud Database" },
+      { label: "Deploy", value: "Vercel", sub: "(GitHub 연동)" },
+      { label: "Tool", value: "Antigravity IDE" }
+    ]
   }
 ];
 
