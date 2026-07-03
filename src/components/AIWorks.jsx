@@ -9,7 +9,6 @@ const aiWorksData = [
     bgLight: "bg-emerald-50",
     textDark: "text-emerald-700",
     iconColor: "#10b981",
-    isSso: true,
     items: [
       { label: "Front", value: "Next.js 14", sub: "(App Router)" },
       { label: "Back", value: "Python", sub: "(FastAPI)" },
