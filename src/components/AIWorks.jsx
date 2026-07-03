@@ -137,6 +137,23 @@ const aiWorksData = [
       { label: "Deploy", value: "데스크탑 PC", sub: "(GitHub Actions)" },
       { label: "Tool", value: "Antigravity IDE" }
     ]
+  },
+  {
+    title: "쇼핑몰 어드민",
+    url: "https://admin.minstudio.app",
+    icon: "ph-user-gear",
+    color: "violet",
+    bgLight: "bg-violet-50",
+    textDark: "text-violet-700",
+    iconColor: "#8b5cf6",
+    isSso: true,
+    items: [
+      { label: "Front", value: "Next.js 14", sub: "(App Router)" },
+      { label: "DB", value: "PostgreSQL" },
+      { label: "OS", value: "Ubuntu" },
+      { label: "Deploy", value: "데스크탑 PC", sub: "(GitHub Actions)" },
+      { label: "Tool", value: "Antigravity IDE" }
+    ]
   }
 ];
 
