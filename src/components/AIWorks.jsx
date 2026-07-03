@@ -115,6 +115,7 @@ const aiWorksData = [
       { label: "Front", value: "Next.js 14", sub: "(App Router)" },
       { label: "DB", value: "PostgreSQL" },
       { label: "Session", value: "Redis" },
+      { label: "OS", value: "Ubuntu" },
       { label: "Deploy", value: "데스크탑 PC", sub: "(GitHub Actions)" },
       { label: "Tool", value: "Antigravity IDE" }
     ]
