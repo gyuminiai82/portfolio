@@ -137,7 +137,7 @@ const aiWorksData = [
       { label: "Deploy", value: "데스크탑 PC", sub: "(GitHub Actions)" },
       { label: "Tool", value: "Antigravity IDE" }
     ],
-    adminUrl: "https://admin.minstudio.app"
+    adminUrl: "https://auth.minstudio.app/admin"
   }
 ];
 
