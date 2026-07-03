@@ -136,24 +136,8 @@ const aiWorksData = [
       { label: "OS", value: "Ubuntu" },
       { label: "Deploy", value: "데스크탑 PC", sub: "(GitHub Actions)" },
       { label: "Tool", value: "Antigravity IDE" }
-    ]
-  },
-  {
-    title: "쇼핑몰 어드민",
-    url: "https://admin.minstudio.app",
-    icon: "ph-user-gear",
-    color: "violet",
-    bgLight: "bg-violet-50",
-    textDark: "text-violet-700",
-    iconColor: "#8b5cf6",
-    isSso: true,
-    items: [
-      { label: "Front", value: "Next.js 14", sub: "(App Router)" },
-      { label: "DB", value: "PostgreSQL" },
-      { label: "OS", value: "Ubuntu" },
-      { label: "Deploy", value: "데스크탑 PC", sub: "(GitHub Actions)" },
-      { label: "Tool", value: "Antigravity IDE" }
-    ]
+    ],
+    adminUrl: "https://admin.minstudio.app"
   }
 ];
 
@@ -187,6 +171,18 @@ export default function AIWorks() {
                   <i className={`ph-bold ${work.isDownload ? 'ph-download-simple' : 'ph-link'}`}></i>
                   {work.isDownload ? 'MinEditor_Setup.zip' : work.url.replace('https://', '')}
                 </div>
+                {work.adminUrl && (
+                  <div
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.open(work.adminUrl, '_blank', 'noopener,noreferrer');
+                    }}
+                    className="text-[11px] text-violet-500 font-medium mt-0.5 flex items-center gap-1 opacity-70 hover:opacity-100 transition-opacity text-left z-20 relative cursor-pointer"
+                  >
+                    <i className="ph-bold ph-user-gear"></i>
+                    [Admin] {work.adminUrl.replace('https://', '')}
+                  </div>
+                )}
               </div>
             </div>
 
