@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import Lenis from 'lenis';
 import Timeline from './components/Timeline';
 import NavIndicator from './components/NavIndicator';

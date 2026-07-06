@@ -3,6 +3,7 @@ import React from 'react';
 const aiWorksData = [
   {
     title: "ERP 시스템",
+    desc: "사내 업무 효율 향상 및 데이터의 체계적인 관리를 위해 구축된 맞춤형 통합 전사적 자원 관리 시스템입니다.",
     url: "https://erp.minstudio.app",
     icon: "ph-buildings",
     color: "emerald",
@@ -19,6 +20,7 @@ const aiWorksData = [
   },
   {
     title: "CCTV",
+    desc: "실시간 영상 스트리밍 및 보안 상태 모니터링을 지원하는 자체 구축 CCTV 관제 시스템입니다.",
     url: "https://cctv.minstudio.app",
     icon: "ph-security-camera",
     color: "red",
@@ -33,6 +35,7 @@ const aiWorksData = [
   },
   /* {
     title: "Home 시스템",
+    desc: "IoT 기기 제어와 센서 데이터 수집을 통해 스마트 홈 환경을 통합 관리하는 홈 오토메이션 플랫폼입니다.",
     url: "https://home.minstudio.app",
     icon: "ph-house",
     color: "blue",
@@ -49,7 +52,26 @@ const aiWorksData = [
     ]
   }, */
   {
+    title: "챗봇 시스템",
+    desc: "인공지능(AI)을 활용하여 사용자의 질문에 실시간으로 답변하고 다양한 작업을 지원하는 대화형 챗봇 서비스입니다.",
+    url: "https://chatbot.minstudio.app",
+    icon: "ph-chat-circle-dots",
+    color: "violet",
+    bgLight: "bg-violet-50",
+    textDark: "text-violet-700",
+    iconColor: "#8b5cf6",
+    items: [
+      { label: "Front", value: "Next.js 14", sub: "(App Router)" },
+      { label: "AI", value: "Upstage" },
+      { label: "Vector DB", value: "Pinecone" },
+      { label: "OS", value: "Ubuntu" },
+      { label: "Deploy", value: "데스크탑 PC", sub: "(GitHub Actions)" },
+      { label: "Tool", value: "Antigravity IDE" }
+    ]
+  },
+  {
     title: "민스튜디오",
+    desc: "개인 포트폴리오 및 기술 블로그로 활용되며, 다양한 AI 작업물과 프로젝트를 소개하는 메인 웹사이트입니다.",
     url: "https://minstudio.app",
     customIcon: (
       <div style={{ position: 'relative', width: '36px', height: '36px' }}>
@@ -73,6 +95,7 @@ const aiWorksData = [
   },
   {
     title: "쿡레시",
+    desc: "보유한 식재료를 기반으로 AI가 맞춤형 레시피를 추천해 주는 스마트 요리 어시스턴트 서비스입니다.",
     url: "https://cook.minstudio.app",
     icon: "ph-cooking-pot",
     color: "orange",
@@ -90,6 +113,7 @@ const aiWorksData = [
   },
   {
     title: "민에디터",
+    desc: "가볍고 빠른 성능을 목표로 C++로 자체 개발한 Windows 환경 전용 커스텀 텍스트 에디터 애플리케이션입니다.",
     url: "https://devminihouse.mycafe24.com/file/MinEditor_Setup.zip",
     icon: "ph-file-zip",
     color: "slate",
@@ -105,6 +129,7 @@ const aiWorksData = [
   },
   {
     title: "SSO 서버",
+    desc: "생태계 내 여러 서비스들에 대해 단일 로그인(SSO) 경험을 제공하고 세션을 통합 관리하는 인증 서버입니다.",
     url: "https://auth.minstudio.app",
     icon: "ph-key",
     color: "cyan",
@@ -123,6 +148,7 @@ const aiWorksData = [
   },
   {
     title: "쇼핑몰",
+    desc: "SSO를 통한 원활한 접근과 상품 검색, 장바구니, 주문 결제 기능 등을 지원하는 이커머스 웹 애플리케이션입니다.",
     url: "https://shop.minstudio.app",
     icon: "ph-shopping-cart",
     color: "pink",
@@ -137,7 +163,7 @@ const aiWorksData = [
       { label: "Deploy", value: "데스크탑 PC", sub: "(GitHub Actions)" },
       { label: "Tool", value: "Antigravity IDE" }
     ],
-    adminUrl: "https://auth.minstudio.app/admin"
+    adminUrl: "https://shop.minstudio.app/admin"
   }
 ];
 
@@ -167,6 +193,11 @@ export default function AIWorks() {
                 <h3 className={`text-lg font-bold ${work.textDark} group-hover:underline decoration-2 underline-offset-4`}>
                   {work.title}
                 </h3>
+                {work.desc && (
+                  <p className="text-[12px] text-slate-500 mt-1 mb-1 leading-relaxed opacity-90 line-clamp-2">
+                    {work.desc}
+                  </p>
+                )}
                 <div className={`text-[11px] ${work.isDownload ? 'text-slate-500' : 'text-blue-500'} font-medium mt-0.5 flex items-center gap-1 opacity-70 group-hover:opacity-100 transition-opacity`}>
                   <i className={`ph-bold ${work.isDownload ? 'ph-download-simple' : 'ph-link'}`}></i>
                   {work.isDownload ? 'MinEditor_Setup.zip' : work.url.replace('https://', '')}
@@ -189,7 +220,7 @@ export default function AIWorks() {
             <ul className="space-y-1.5">
               {work.items.map((item, i) => (
                 <li key={i} className="flex gap-2 text-[13px] leading-tight">
-                  <span className={`font-bold w-[60px] shrink-0 ${work.textDark} opacity-80`}>{item.label}</span>
+                  <span className={`font-bold w-[72px] whitespace-nowrap shrink-0 ${work.textDark} opacity-80`}>{item.label}</span>
                   <span className="flex flex-wrap items-baseline gap-1 text-slate-600 font-medium">
                     <span>{item.value}</span>
                     {item.sub && <span className="text-[11px] text-slate-400">{item.sub}</span>}
