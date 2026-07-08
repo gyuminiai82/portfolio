@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const aiWorksData = [
   {
@@ -16,6 +17,27 @@ const aiWorksData = [
       { label: "DB", value: "PostgreSQL" },
       { label: "Deploy", value: "AWS EC2", sub: "(Docker, GitHub Actions)" },
       { label: "Tool", value: "Antigravity IDE" }
+    ]
+  },
+  {
+    title: "DATA PIPELINE",
+    desc: "Node-RED에서 수집된 데이터를 EMQX Broker와 Apache Kafka를 거쳐 TimescaleDB에 적재하고 Grafana로 시각화하는 Docker 기반의 실시간 데이터 수집 및 분석 파이프라인입니다.",
+    color: "blue",
+    bgLight: "bg-blue-50",
+    textDark: "text-blue-700",
+    items: [
+      { label: "Broker", value: "EMQX, Apache Kafka" },
+      { label: "Pipeline", value: "Node-RED, Python" },
+      { label: "DB", value: "TimescaleDB" },
+      { label: "Visual", value: "Grafana" },
+      { label: "Deploy", value: "Docker", sub: "(Docker, GitHub Actions)" },
+      { label: "Tool", value: "Antigravity IDE" }
+    ],
+    flowChartUrl: "/images/pipeline_docker.png",
+    extraUrls: [
+      { name: "Node-RED", url: "https://nodered.minstudio.app", icon: "ph-plugs", color: "text-blue-600" },
+      { name: "EMQX", url: "https://emqx.minstudio.app", icon: "ph-broadcast", color: "text-emerald-600", note: "(admin/emqx@admin)" },
+      { name: "Grafana", url: "https://grafana.minstudio.app", icon: "ph-chart-line", color: "text-orange-500" }
     ]
   },
   {
@@ -127,6 +149,7 @@ const aiWorksData = [
       { label: "Tool", value: "Antigravity IDE" }
     ]
   },
+
   {
     title: "SSO 서버",
     desc: "생태계 내 여러 서비스들에 대해 단일 로그인(SSO) 경험을 제공하고 세션을 통합 관리하는 인증 서버입니다.",
@@ -168,40 +191,70 @@ const aiWorksData = [
 ];
 
 export default function AIWorks() {
+  const [activeImage, setActiveImage] = useState(null);
+  const [isExpanded, setIsExpanded] = useState(true);
   const ssoWorks = aiWorksData.filter(w => w.isSso);
   const otherWorks = aiWorksData.filter(w => !w.isSso);
 
   const renderCards = (works) => (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      {works.map((work, idx) => (
-        <a
-          key={idx}
-          href={work.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group relative flex flex-col p-4 bg-white rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 overflow-hidden"
-        >
-          {/* Hover Gradient Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          
-          <div className="relative z-10">
-            <div className="flex items-center gap-3 mb-4">
-              <div className={`w-12 h-12 rounded-xl ${work.bgLight} flex items-center justify-center group-hover:scale-105 transition-transform duration-300`}>
-                {work.customIcon ? work.customIcon : <i className={`ph-duotone ${work.icon}`} style={{ color: work.iconColor, fontSize: '1.6rem' }}></i>}
-              </div>
-              <div className="flex flex-col justify-center">
-                <h3 className={`text-lg font-bold ${work.textDark} group-hover:underline decoration-2 underline-offset-4`}>
-                  {work.title}
-                </h3>
-                {work.desc && (
-                  <p className="text-[12px] text-slate-500 mt-1 mb-1 leading-relaxed opacity-90 line-clamp-2">
-                    {work.desc}
-                  </p>
+      {works.map((work, idx) => {
+        const isClickable = !!work.url;
+        const CardElement = isClickable ? 'a' : 'div';
+        const cardProps = isClickable 
+          ? { href: work.url, target: "_blank", rel: "noopener noreferrer" } 
+          : {};
+
+        return (
+          <CardElement
+            key={idx}
+            {...cardProps}
+            className={`group relative flex flex-col p-4 bg-white rounded-2xl border border-slate-200/60 shadow-sm ${
+              isClickable ? 'hover:shadow-md hover:-translate-y-1 cursor-pointer' : ''
+            } transition-all duration-300 overflow-hidden`}
+          >
+            {/* Hover Gradient Background */}
+            {isClickable && (
+              <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            )}
+            
+            <div className="relative z-10">
+              <div className="flex items-center gap-3 mb-4">
+                {(work.customIcon || work.icon) && (
+                  <div className={`w-12 h-12 rounded-xl ${work.bgLight} flex items-center justify-center ${isClickable ? 'group-hover:scale-105' : ''} transition-transform duration-300 shrink-0`}>
+                    {work.customIcon ? work.customIcon : <i className={`ph-duotone ${work.icon}`} style={{ color: work.iconColor, fontSize: '1.6rem' }}></i>}
+                  </div>
                 )}
-                <div className={`text-[11px] ${work.isDownload ? 'text-slate-500' : 'text-blue-500'} font-medium mt-0.5 flex items-center gap-1 opacity-70 group-hover:opacity-100 transition-opacity`}>
-                  <i className={`ph-bold ${work.isDownload ? 'ph-download-simple' : 'ph-link'}`}></i>
-                  {work.isDownload ? 'MinEditor_Setup.zip' : work.url.replace('https://', '')}
-                </div>
+                <div className="flex flex-col justify-center w-full pr-16">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <h3 className={`text-lg font-bold ${work.textDark} ${isClickable ? 'group-hover:underline' : ''} decoration-2 underline-offset-4`}>
+                      {work.title}
+                    </h3>
+                    {work.flowChartUrl && (
+                      <button
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          setActiveImage(work.flowChartUrl);
+                        }}
+                        className="inline-flex items-center gap-1 px-2.5 py-1 text-[11px] font-bold text-blue-600 hover:text-white bg-blue-50 hover:bg-blue-600 border border-blue-200 hover:border-blue-600 rounded-lg shadow-sm transition-all cursor-pointer z-30 relative"
+                      >
+                        <i className="ph-bold ph-tree-structure"></i>
+                        흐름도 보기
+                      </button>
+                    )}
+                  </div>
+                  {work.desc && (
+                    <p className="text-[12px] text-slate-500 mt-1 mb-1 leading-relaxed opacity-90">
+                      {work.desc}
+                    </p>
+                  )}
+                  {work.url && (
+                    <div className={`text-[11px] ${work.isDownload ? 'text-slate-500' : 'text-blue-500'} font-medium mt-0.5 flex items-center gap-1 opacity-70 group-hover:opacity-100 transition-opacity`}>
+                      <i className={`ph-bold ${work.isDownload ? 'ph-download-simple' : 'ph-link'}`}></i>
+                      {work.isDownload ? 'MinEditor_Setup.zip' : work.url.replace('https://', '')}
+                    </div>
+                  )}
                 {work.adminUrl && (
                   <div
                     onClick={(e) => {
@@ -214,6 +267,23 @@ export default function AIWorks() {
                     [Admin] {work.adminUrl.replace('https://', '')}
                   </div>
                 )}
+                {work.extraUrls && work.extraUrls.map((extra, idx) => (
+                  <div
+                    key={idx}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (extra.isModal) {
+                        setActiveImage(extra.url);
+                      } else {
+                        window.open(extra.url, '_blank', 'noopener,noreferrer');
+                      }
+                    }}
+                    className={`text-[11px] ${extra.color || 'text-blue-500'} font-medium mt-0.5 flex items-center gap-1 opacity-70 hover:opacity-100 transition-opacity text-left z-20 relative cursor-pointer`}
+                  >
+                    <i className={`ph-bold ${extra.icon || 'ph-link'}`}></i>
+                    {extra.url.startsWith('http') ? extra.url.replace('https://', '') : extra.name} {extra.note && <span className="text-[10px] text-slate-400 font-normal ml-1">{extra.note}</span>}
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -230,55 +300,114 @@ export default function AIWorks() {
             </ul>
           </div>
 
-          {/* Link Indicator */}
-          <div className={`absolute top-4 right-4 flex items-center gap-1 px-2.5 py-1 rounded-full ${work.bgLight} border border-white shadow-[0_2px_8px_rgba(0,0,0,0.05)] transition-all duration-300 group-hover:scale-105 group-hover:shadow-md group-hover:-translate-y-0.5`}>
-            <span className={`text-[10px] font-extrabold uppercase tracking-wider ${work.textDark}`}>
-              {work.isDownload ? 'Download' : 'Visit'}
-            </span>
-            <i className={`ph-bold ${work.isDownload ? 'ph-download-simple' : 'ph-arrow-up-right'} text-xs ${work.textDark}`}></i>
-          </div>
-        </a>
-      ))}
+            {/* Link Indicator */}
+            {isClickable && (
+              <div className={`absolute top-4 right-4 flex items-center gap-1 px-2.5 py-1 rounded-full ${work.bgLight} border border-white shadow-[0_2px_8px_rgba(0,0,0,0.05)] transition-all duration-300 group-hover:scale-105 group-hover:shadow-md group-hover:-translate-y-0.5`}>
+                <span className={`text-[10px] font-extrabold uppercase tracking-wider ${work.textDark}`}>
+                  {work.isDownload ? 'Download' : 'Visit'}
+                </span>
+                <i className={`ph-bold ${work.isDownload ? 'ph-download-simple' : 'ph-arrow-up-right'} text-xs ${work.textDark}`}></i>
+              </div>
+            )}
+          </CardElement>
+        );
+      })}
     </div>
   );
 
   return (
     <div className="max-w-6xl mx-auto mt-10 mb-16 px-4 text-left relative z-20">
       <fieldset className="border border-slate-200/80 rounded-3xl p-5 md:p-6 pt-4">
-        <legend className="ml-4 px-3 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-sm shrink-0">
-            <i className="ph-duotone ph-sparkle text-white text-xl"></i>
+        <legend className="ml-4 px-3 flex items-center justify-between gap-3 w-[calc(100%-2rem)] md:w-[calc(100%-3rem)]">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-sm shrink-0">
+              <i className="ph-duotone ph-sparkle text-white text-xl"></i>
+            </div>
+            <div className="flex flex-col">
+              <h2 className="text-xl font-extrabold text-slate-800 tracking-tight">AI 활용 작업물</h2>
+              <p className="text-[12px] text-slate-500 font-medium mt-0.5 tracking-tight">
+                "AI가 과연 어디까지 만들 수 있을까?" — 단순 보조를 넘어 기획부터 배포까지, AI 개발의 한계를 테스트하며 완성한 결과물입니다.
+              </p>
+            </div>
           </div>
-          <div className="flex flex-col">
-            <h2 className="text-xl font-extrabold text-slate-800 tracking-tight">AI 활용 작업물</h2>
-            <p className="text-[12px] text-slate-500 font-medium mt-0.5 tracking-tight">
-              "AI가 과연 어디까지 만들 수 있을까?" — 단순 보조를 넘어 기획부터 배포까지, AI 개발의 한계를 테스트하며 완성한 결과물입니다.
-            </p>
-          </div>
+          
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="flex items-center gap-1 px-3 py-1.5 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-600 hover:text-slate-800 font-bold text-xs shadow-sm transition-all cursor-pointer select-none shrink-0"
+          >
+            <i className={`ph-bold ${isExpanded ? 'ph-caret-up' : 'ph-caret-down'}`}></i>
+            {isExpanded ? '접기' : '펼치기'}
+          </button>
         </legend>
 
-        <div className="mt-4 mb-2">
-           <h3 className="text-[13px] font-bold text-slate-700 flex items-center gap-2 mb-3 ml-1">
-             <div className="w-6 h-6 rounded-md bg-slate-50 border border-slate-100 flex items-center justify-center">
-               <i className="ph-fill ph-squares-four text-slate-500 text-sm"></i>
-             </div>
-             개별 프로젝트
-           </h3>
-           {renderCards(otherWorks)}
-        </div>
+        <AnimatePresence initial={false}>
+          {isExpanded && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="overflow-hidden"
+            >
+              <div className="mt-4 mb-2">
+                 <h3 className="text-[13px] font-bold text-slate-700 flex items-center gap-2 mb-3 ml-1">
+                   <div className="w-6 h-6 rounded-md bg-slate-50 border border-slate-100 flex items-center justify-center">
+                     <i className="ph-fill ph-squares-four text-slate-500 text-sm"></i>
+                   </div>
+                   개별 프로젝트
+                 </h3>
+                 {renderCards(otherWorks)}
+              </div>
 
-        <div className="w-full h-px bg-slate-100/80 my-6"></div>
+              <div className="w-full h-px bg-slate-100/80 my-6"></div>
 
-        <div className="mb-2">
-           <h3 className="text-[13px] font-bold text-slate-700 flex items-center gap-2 mb-3 ml-1">
-             <div className="w-6 h-6 rounded-md bg-blue-50 border border-blue-100 flex items-center justify-center">
-               <i className="ph-fill ph-key text-blue-500 text-sm"></i>
-             </div>
-             SSO 연동 생태계
-           </h3>
-           {renderCards(ssoWorks)}
-        </div>
+              <div className="mb-2">
+                 <h3 className="text-[13px] font-bold text-slate-700 flex items-center gap-2 mb-3 ml-1">
+                   <div className="w-6 h-6 rounded-md bg-blue-50 border border-blue-100 flex items-center justify-center">
+                     <i className="ph-fill ph-key text-blue-500 text-sm"></i>
+                   </div>
+                   SSO 연동 생태계
+                 </h3>
+                 {renderCards(ssoWorks)}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </fieldset>
+
+      {/* Modal Overlay for Pipeline Diagram */}
+      {activeImage && (
+        <div
+          className="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 transition-all duration-300"
+          onClick={() => setActiveImage(null)}
+        >
+          <div
+            className="relative max-w-5xl w-full bg-slate-900 rounded-2xl border border-slate-800 shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800/80 bg-slate-950/40">
+              <span className="text-slate-200 font-bold text-sm">데이터 파이프라인 흐름도</span>
+              <button
+                onClick={() => setActiveImage(null)}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-red-600 hover:text-white text-slate-300 font-semibold text-xs border border-slate-700/60 transition-all cursor-pointer shadow-sm"
+              >
+                <i className="ph-bold ph-x text-sm"></i>
+                닫기
+              </button>
+            </div>
+            
+            {/* Modal Content */}
+            <div className="p-4 flex justify-center bg-slate-950/20">
+              <img
+                src={activeImage}
+                alt="Pipeline Diagram"
+                className="max-h-[75vh] object-contain rounded-lg"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
