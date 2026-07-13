@@ -40,21 +40,7 @@ const aiWorksData = [
       { name: "Grafana", url: "https://grafana.minstudio.app", icon: "ph-chart-line", color: "text-orange-500" }
     ]
   },
-  {
-    title: "CCTV",
-    desc: "실시간 영상 스트리밍 및 모니터링을 위한 CCTV 관제 시스템입니다.",
-    url: "https://cctv.minstudio.app",
-    icon: "ph-security-camera",
-    color: "red",
-    bgLight: "bg-red-50",
-    textDark: "text-red-700",
-    iconColor: "#ef4444",
-    items: [
-      { label: "Back", value: "Python", sub: "(FastAPI)" },
-      { label: "Deploy", value: "AWS EC2", sub: "(Docker, GitHub Actions)" },
-      { label: "Tool", value: "Antigravity IDE" }
-    ]
-  },
+
   /* {
     title: "Home 시스템",
     desc: "IoT 기기 제어와 센서 데이터 수집을 통해 스마트 홈 환경을 통합 관리하는 홈 오토메이션 플랫폼입니다.",
