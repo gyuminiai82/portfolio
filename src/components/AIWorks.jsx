@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const aiWorksData = [
   {
     title: "ERP 시스템",
-    desc: "사내 업무 효율 향상 및 데이터의 체계적인 관리를 위해 구축된 맞춤형 통합 전사적 자원 관리 시스템입니다.",
+    desc: "사내 업무 효율과 데이터 관리를 위한 맞춤형 통합 ERP 시스템입니다.",
     url: "https://erp.minstudio.app",
     icon: "ph-buildings",
     color: "emerald",
@@ -21,7 +21,7 @@ const aiWorksData = [
   },
   {
     title: "DATA PIPELINE",
-    desc: "Node-RED에서 수집된 데이터를 EMQX Broker와 Apache Kafka를 거쳐 TimescaleDB에 적재하고 Grafana로 시각화하는 Docker 기반의 실시간 데이터 수집 및 분석 파이프라인입니다.",
+    desc: "실시간 데이터 수집 및 분석을 위한 Docker 기반의 데이터 파이프라인입니다. (Node-RED, Kafka, TimescaleDB, Grafana 연동)",
     color: "blue",
     bgLight: "bg-blue-50",
     textDark: "text-blue-700",
@@ -42,7 +42,7 @@ const aiWorksData = [
   },
   {
     title: "CCTV",
-    desc: "실시간 영상 스트리밍 및 보안 상태 모니터링을 지원하는 자체 구축 CCTV 관제 시스템입니다.",
+    desc: "실시간 영상 스트리밍 및 모니터링을 위한 CCTV 관제 시스템입니다.",
     url: "https://cctv.minstudio.app",
     icon: "ph-security-camera",
     color: "red",
@@ -75,7 +75,7 @@ const aiWorksData = [
   }, */
   {
     title: "챗봇 시스템",
-    desc: "인공지능(AI)을 활용하여 사용자의 질문에 실시간으로 답변하고 다양한 작업을 지원하는 대화형 챗봇 서비스입니다.",
+    desc: "Upstage와 Pinecone을 연동한 실시간 AI 대화형 챗봇 서비스입니다.",
     url: "https://chatbot.minstudio.app",
     icon: "ph-chat-circle-dots",
     color: "violet",
@@ -93,7 +93,7 @@ const aiWorksData = [
   },
   {
     title: "민스튜디오",
-    desc: "개인 포트폴리오 및 기술 블로그로 활용되며, 다양한 AI 작업물과 프로젝트를 소개하는 메인 웹사이트입니다.",
+    desc: "개인 프로젝트와 AI 작업물을 소개하는 포트폴리오 및 기술 블로그 웹사이트입니다.",
     url: "https://minstudio.app",
     customIcon: (
       <div style={{ position: 'relative', width: '36px', height: '36px' }}>
@@ -117,7 +117,7 @@ const aiWorksData = [
   },
   {
     title: "쿡레시",
-    desc: "보유한 식재료를 기반으로 AI가 맞춤형 레시피를 추천해 주는 스마트 요리 어시스턴트 서비스입니다.",
+    desc: "냉장고 속 재료를 바탕으로 AI가 맞춤형 레시피를 추천해주는 스마트 요리 가이드 서비스입니다.",
     url: "https://cook.minstudio.app",
     icon: "ph-cooking-pot",
     color: "orange",
@@ -135,7 +135,7 @@ const aiWorksData = [
   },
   {
     title: "민에디터",
-    desc: "가볍고 빠른 성능을 목표로 C++로 자체 개발한 Windows 환경 전용 커스텀 텍스트 에디터 애플리케이션입니다.",
+    desc: "C++로 자체 개발한 Windows 환경 전용 커스텀 텍스트 에디터 프로그램입니다.",
     url: "https://devminihouse.mycafe24.com/file/MinEditor_Setup.zip",
     icon: "ph-file-zip",
     color: "slate",
@@ -152,7 +152,7 @@ const aiWorksData = [
 
   {
     title: "SSO 서버",
-    desc: "생태계 내 여러 서비스들에 대해 단일 로그인(SSO) 경험을 제공하고 세션을 통합 관리하는 인증 서버입니다.",
+    desc: "제작한 여러 서비스의 로그인 통합 및 세션 관리를 위한 SSO 인증 서버입니다.",
     url: "https://auth.minstudio.app",
     icon: "ph-key",
     color: "cyan",
@@ -171,7 +171,7 @@ const aiWorksData = [
   },
   {
     title: "쇼핑몰",
-    desc: "SSO를 통한 원활한 접근과 상품 검색, 장바구니, 주문 결제 기능 등을 지원하는 이커머스 웹 애플리케이션입니다.",
+    desc: "SSO 로그인 연동, 상품 검색, 장바구니, 결제 기능을 지원하는 이커머스 쇼핑몰입니다.",
     url: "https://shop.minstudio.app",
     icon: "ph-shopping-cart",
     color: "pink",
@@ -326,7 +326,7 @@ export default function AIWorks() {
             <div className="flex flex-col">
               <h2 className="text-xl font-extrabold text-slate-800 tracking-tight">AI 활용 작업물</h2>
               <p className="text-[12px] text-slate-500 font-medium mt-0.5 tracking-tight">
-                "AI가 과연 어디까지 만들 수 있을까?" — 단순 보조를 넘어 기획부터 배포까지, AI 개발의 한계를 테스트하며 완성한 결과물입니다.
+                AI 코딩 어시스턴트를 활용하여 기획부터 배포까지 직접 개발한 프로젝트들입니다.
               </p>
             </div>
           </div>
